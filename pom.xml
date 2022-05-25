@@ -39,6 +39,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <protobuf2.version>2.6.1</protobuf2.version>
+        <protobuf3.version>3.5.1</protobuf3.version>
+        <protobuf.version>${protobuf3.version}</protobuf.version>
     </properties>
 
     <repositories>
@@ -152,7 +155,7 @@
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>3.5.1</version>
+            <version>${protobuf.version}</version>
         </dependency>
 
         <!-- Geometry model -->

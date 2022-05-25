@@ -6,24 +6,18 @@ package com.wdtinc.mapbox_vector_tile;
 public final class VectorTile {
   private VectorTile() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-
-  public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface TileOrBuilder extends
       // @@protoc_insertion_point(interface_extends:vector_tile.Tile)
-      com.google.protobuf.GeneratedMessageV3.
+      com.google.protobuf.GeneratedMessage.
           ExtendableMessageOrBuilder<Tile> {
 
     /**
      * <code>repeated .vector_tile.Tile.Layer layers = 3;</code>
      */
-    java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer>
-    getLayersList();
+    java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer> 
+        getLayersList();
     /**
      * <code>repeated .vector_tile.Tile.Layer layers = 3;</code>
      */
@@ -35,8 +29,8 @@ public final class VectorTile {
     /**
      * <code>repeated .vector_tile.Tile.Layer layers = 3;</code>
      */
-    java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.LayerOrBuilder>
-    getLayersOrBuilderList();
+    java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.LayerOrBuilder> 
+        getLayersOrBuilderList();
     /**
      * <code>repeated .vector_tile.Tile.Layer layers = 3;</code>
      */
@@ -46,33 +40,38 @@ public final class VectorTile {
   /**
    * Protobuf type {@code vector_tile.Tile}
    */
-  public  static final class Tile extends
-      com.google.protobuf.GeneratedMessageV3.ExtendableMessage<
-          Tile> implements
+  public static final class Tile extends
+      com.google.protobuf.GeneratedMessage.ExtendableMessage<
+        Tile> implements
       // @@protoc_insertion_point(message_implements:vector_tile.Tile)
       TileOrBuilder {
-    private static final long serialVersionUID = 0L;
     // Use Tile.newBuilder() to construct.
-    private Tile(com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<com.wdtinc.mapbox_vector_tile.VectorTile.Tile, ?> builder) {
+    private Tile(com.google.protobuf.GeneratedMessage.ExtendableBuilder<com.wdtinc.mapbox_vector_tile.VectorTile.Tile, ?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Tile() {
-      layers_ = java.util.Collections.emptyList();
+    private Tile(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Tile defaultInstance;
+    public static Tile getDefaultInstance() {
+      return defaultInstance;
     }
 
+    public Tile getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+        getUnknownFields() {
       return this.unknownFields;
     }
     private Tile(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -85,8 +84,8 @@ public final class VectorTile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -96,8 +95,7 @@ public final class VectorTile {
                 layers_ = new java.util.ArrayList<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              layers_.add(
-                  input.readMessage(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.PARSER, extensionRegistry));
+              layers_.add(input.readMessage(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.PARSER, extensionRegistry));
               break;
             }
           }
@@ -106,7 +104,7 @@ public final class VectorTile {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           layers_ = java.util.Collections.unmodifiableList(layers_);
@@ -116,42 +114,57 @@ public final class VectorTile {
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
+        getDescriptor() {
       return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
       return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.wdtinc.mapbox_vector_tile.VectorTile.Tile.class, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Builder.class);
     }
 
+    public static com.google.protobuf.Parser<Tile> PARSER =
+        new com.google.protobuf.AbstractParser<Tile>() {
+      public Tile parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Tile(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Tile> getParserForType() {
+      return PARSER;
+    }
+
     /**
+     * Protobuf enum {@code vector_tile.Tile.GeomType}
+     *
      * <pre>
      * GeomType is described in section 4.3.4 of the specification
      * </pre>
-     *
-     * Protobuf enum {@code vector_tile.Tile.GeomType}
      */
     public enum GeomType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>UNKNOWN = 0;</code>
        */
-      UNKNOWN(0),
+      UNKNOWN(0, 0),
       /**
        * <code>POINT = 1;</code>
        */
-      POINT(1),
+      POINT(1, 1),
       /**
        * <code>LINESTRING = 2;</code>
        */
-      LINESTRING(2),
+      LINESTRING(2, 2),
       /**
        * <code>POLYGON = 3;</code>
        */
-      POLYGON(3),
+      POLYGON(3, 3),
       ;
 
       /**
@@ -172,19 +185,9 @@ public final class VectorTile {
       public static final int POLYGON_VALUE = 3;
 
 
-      public final int getNumber() {
-        return value;
-      }
+      public final int getNumber() { return value; }
 
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
       public static GeomType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static GeomType forNumber(int value) {
         switch (value) {
           case 0: return UNKNOWN;
           case 1: return POINT;
@@ -195,27 +198,27 @@ public final class VectorTile {
       }
 
       public static com.google.protobuf.Internal.EnumLiteMap<GeomType>
-      internalGetValueMap() {
+          internalGetValueMap() {
         return internalValueMap;
       }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          GeomType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<GeomType>() {
-            public GeomType findValueByNumber(int number) {
-              return GeomType.forNumber(number);
-            }
-          };
+      private static com.google.protobuf.Internal.EnumLiteMap<GeomType>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<GeomType>() {
+              public GeomType findValueByNumber(int number) {
+                return GeomType.valueOf(number);
+              }
+            };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(index);
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+          getDescriptorForType() {
         return getDescriptor();
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+          getDescriptor() {
         return com.wdtinc.mapbox_vector_tile.VectorTile.Tile.getDescriptor().getEnumTypes().get(0);
       }
 
@@ -225,14 +228,16 @@ public final class VectorTile {
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
-              "EnumValueDescriptor is not for this type.");
+            "EnumValueDescriptor is not for this type.");
         }
         return VALUES[desc.getIndex()];
       }
 
+      private final int index;
       private final int value;
 
-      private GeomType(int value) {
+      private GeomType(int index, int value) {
+        this.index = index;
         this.value = value;
       }
 
@@ -241,34 +246,34 @@ public final class VectorTile {
 
     public interface ValueOrBuilder extends
         // @@protoc_insertion_point(interface_extends:vector_tile.Tile.Value)
-        com.google.protobuf.GeneratedMessageV3.
+        com.google.protobuf.GeneratedMessage.
             ExtendableMessageOrBuilder<Value> {
 
       /**
+       * <code>optional string string_value = 1;</code>
+       *
        * <pre>
        * Exactly one of these values must be present in a valid message
        * </pre>
-       *
-       * <code>optional string string_value = 1;</code>
        */
       boolean hasStringValue();
       /**
+       * <code>optional string string_value = 1;</code>
+       *
        * <pre>
        * Exactly one of these values must be present in a valid message
        * </pre>
-       *
-       * <code>optional string string_value = 1;</code>
        */
       java.lang.String getStringValue();
       /**
+       * <code>optional string string_value = 1;</code>
+       *
        * <pre>
        * Exactly one of these values must be present in a valid message
        * </pre>
-       *
-       * <code>optional string string_value = 1;</code>
        */
       com.google.protobuf.ByteString
-      getStringValueBytes();
+          getStringValueBytes();
 
       /**
        * <code>optional float float_value = 2;</code>
@@ -325,46 +330,45 @@ public final class VectorTile {
       boolean getBoolValue();
     }
     /**
+     * Protobuf type {@code vector_tile.Tile.Value}
+     *
      * <pre>
      * Variant type encoding
      * The use of values is described in section 4.1 of the specification
      * </pre>
-     *
-     * Protobuf type {@code vector_tile.Tile.Value}
      */
-    public  static final class Value extends
-        com.google.protobuf.GeneratedMessageV3.ExtendableMessage<
-            Value> implements
+    public static final class Value extends
+        com.google.protobuf.GeneratedMessage.ExtendableMessage<
+          Value> implements
         // @@protoc_insertion_point(message_implements:vector_tile.Tile.Value)
         ValueOrBuilder {
-      private static final long serialVersionUID = 0L;
       // Use Value.newBuilder() to construct.
-      private Value(com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, ?> builder) {
+      private Value(com.google.protobuf.GeneratedMessage.ExtendableBuilder<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, ?> builder) {
         super(builder);
+        this.unknownFields = builder.getUnknownFields();
       }
-      private Value() {
-        stringValue_ = "";
-        floatValue_ = 0F;
-        doubleValue_ = 0D;
-        intValue_ = 0L;
-        uintValue_ = 0L;
-        sintValue_ = 0L;
-        boolValue_ = false;
+      private Value(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final Value defaultInstance;
+      public static Value getDefaultInstance() {
+        return defaultInstance;
       }
 
+      public Value getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+          getUnknownFields() {
         return this.unknownFields;
       }
       private Value(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        initFields();
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -377,8 +381,8 @@ public final class VectorTile {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -425,50 +429,65 @@ public final class VectorTile {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+              e.getMessage()).setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+          getDescriptor() {
         return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Value_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
         return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Value_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.class, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder.class);
       }
 
+      public static com.google.protobuf.Parser<Value> PARSER =
+          new com.google.protobuf.AbstractParser<Value>() {
+        public Value parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Value(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Value> getParserForType() {
+        return PARSER;
+      }
+
       private int bitField0_;
       public static final int STRING_VALUE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object stringValue_;
+      private java.lang.Object stringValue_;
       /**
+       * <code>optional string string_value = 1;</code>
+       *
        * <pre>
        * Exactly one of these values must be present in a valid message
        * </pre>
-       *
-       * <code>optional string string_value = 1;</code>
        */
       public boolean hasStringValue() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
+       * <code>optional string string_value = 1;</code>
+       *
        * <pre>
        * Exactly one of these values must be present in a valid message
        * </pre>
-       *
-       * <code>optional string string_value = 1;</code>
        */
       public java.lang.String getStringValue() {
         java.lang.Object ref = stringValue_;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs =
+          com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -478,17 +497,17 @@ public final class VectorTile {
         }
       }
       /**
+       * <code>optional string string_value = 1;</code>
+       *
        * <pre>
        * Exactly one of these values must be present in a valid message
        * </pre>
-       *
-       * <code>optional string string_value = 1;</code>
        */
       public com.google.protobuf.ByteString
-      getStringValueBytes() {
+          getStringValueBytes() {
         java.lang.Object ref = stringValue_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           stringValue_ = b;
@@ -588,6 +607,15 @@ public final class VectorTile {
         return boolValue_;
       }
 
+      private void initFields() {
+        stringValue_ = "";
+        floatValue_ = 0F;
+        doubleValue_ = 0D;
+        intValue_ = 0L;
+        uintValue_ = 0L;
+        sintValue_ = 0L;
+        boolValue_ = false;
+      }
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -603,12 +631,13 @@ public final class VectorTile {
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
-          throws java.io.IOException {
-        com.google.protobuf.GeneratedMessageV3
-            .ExtendableMessage<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value>.ExtensionWriter
-            extensionWriter = newExtensionWriter();
+                          throws java.io.IOException {
+        getSerializedSize();
+        com.google.protobuf.GeneratedMessage
+          .ExtendableMessage<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value>.ExtensionWriter extensionWriter =
+            newExtensionWriter();
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stringValue_);
+          output.writeBytes(1, getStringValueBytes());
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
           output.writeFloat(2, floatValue_);
@@ -629,161 +658,56 @@ public final class VectorTile {
           output.writeBool(7, boolValue_);
         }
         extensionWriter.writeUntil(536870912, output);
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
+      private int memoizedSerializedSize = -1;
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stringValue_);
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(1, getStringValueBytes());
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
           size += com.google.protobuf.CodedOutputStream
-              .computeFloatSize(2, floatValue_);
+            .computeFloatSize(2, floatValue_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
           size += com.google.protobuf.CodedOutputStream
-              .computeDoubleSize(3, doubleValue_);
+            .computeDoubleSize(3, doubleValue_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
           size += com.google.protobuf.CodedOutputStream
-              .computeInt64Size(4, intValue_);
+            .computeInt64Size(4, intValue_);
         }
         if (((bitField0_ & 0x00000010) == 0x00000010)) {
           size += com.google.protobuf.CodedOutputStream
-              .computeUInt64Size(5, uintValue_);
+            .computeUInt64Size(5, uintValue_);
         }
         if (((bitField0_ & 0x00000020) == 0x00000020)) {
           size += com.google.protobuf.CodedOutputStream
-              .computeSInt64Size(6, sintValue_);
+            .computeSInt64Size(6, sintValue_);
         }
         if (((bitField0_ & 0x00000040) == 0x00000040)) {
           size += com.google.protobuf.CodedOutputStream
-              .computeBoolSize(7, boolValue_);
+            .computeBoolSize(7, boolValue_);
         }
         size += extensionsSerializedSize();
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
         return size;
       }
 
+      private static final long serialVersionUID = 0L;
       @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-          return true;
-        }
-        if (!(obj instanceof com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value)) {
-          return super.equals(obj);
-        }
-        com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value other = (com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value) obj;
-
-        boolean result = true;
-        result = result && (hasStringValue() == other.hasStringValue());
-        if (hasStringValue()) {
-          result = result && getStringValue()
-              .equals(other.getStringValue());
-        }
-        result = result && (hasFloatValue() == other.hasFloatValue());
-        if (hasFloatValue()) {
-          result = result && (
-              java.lang.Float.floatToIntBits(getFloatValue())
-                  == java.lang.Float.floatToIntBits(
-                  other.getFloatValue()));
-        }
-        result = result && (hasDoubleValue() == other.hasDoubleValue());
-        if (hasDoubleValue()) {
-          result = result && (
-              java.lang.Double.doubleToLongBits(getDoubleValue())
-                  == java.lang.Double.doubleToLongBits(
-                  other.getDoubleValue()));
-        }
-        result = result && (hasIntValue() == other.hasIntValue());
-        if (hasIntValue()) {
-          result = result && (getIntValue()
-              == other.getIntValue());
-        }
-        result = result && (hasUintValue() == other.hasUintValue());
-        if (hasUintValue()) {
-          result = result && (getUintValue()
-              == other.getUintValue());
-        }
-        result = result && (hasSintValue() == other.hasSintValue());
-        if (hasSintValue()) {
-          result = result && (getSintValue()
-              == other.getSintValue());
-        }
-        result = result && (hasBoolValue() == other.hasBoolValue());
-        if (hasBoolValue()) {
-          result = result && (getBoolValue()
-              == other.getBoolValue());
-        }
-        result = result && unknownFields.equals(other.unknownFields);
-        result = result &&
-            getExtensionFields().equals(other.getExtensionFields());
-        return result;
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
       }
 
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        if (hasStringValue()) {
-          hash = (37 * hash) + STRING_VALUE_FIELD_NUMBER;
-          hash = (53 * hash) + getStringValue().hashCode();
-        }
-        if (hasFloatValue()) {
-          hash = (37 * hash) + FLOAT_VALUE_FIELD_NUMBER;
-          hash = (53 * hash) + java.lang.Float.floatToIntBits(
-              getFloatValue());
-        }
-        if (hasDoubleValue()) {
-          hash = (37 * hash) + DOUBLE_VALUE_FIELD_NUMBER;
-          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-              java.lang.Double.doubleToLongBits(getDoubleValue()));
-        }
-        if (hasIntValue()) {
-          hash = (37 * hash) + INT_VALUE_FIELD_NUMBER;
-          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-              getIntValue());
-        }
-        if (hasUintValue()) {
-          hash = (37 * hash) + UINT_VALUE_FIELD_NUMBER;
-          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-              getUintValue());
-        }
-        if (hasSintValue()) {
-          hash = (37 * hash) + SINT_VALUE_FIELD_NUMBER;
-          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-              getSintValue());
-        }
-        if (hasBoolValue()) {
-          hash = (37 * hash) + BOOL_VALUE_FIELD_NUMBER;
-          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-              getBoolValue());
-        }
-        hash = hashFields(hash, getExtensionFields());
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -807,80 +731,69 @@ public final class VectorTile {
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return PARSER.parseFrom(input);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return PARSER.parseFrom(input, extensionRegistry);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return PARSER.parseDelimitedFrom(input);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return PARSER.parseFrom(input);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return PARSER.parseFrom(input, extensionRegistry);
       }
 
+      public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
       public static Builder newBuilder(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        return newBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
+      public Builder toBuilder() { return newBuilder(this); }
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
       /**
+       * Protobuf type {@code vector_tile.Tile.Value}
+       *
        * <pre>
        * Variant type encoding
        * The use of values is described in section 4.1 of the specification
        * </pre>
-       *
-       * Protobuf type {@code vector_tile.Tile.Value}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<
-              com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, Builder> implements
+          com.google.protobuf.GeneratedMessage.ExtendableBuilder<
+            com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, Builder> implements
           // @@protoc_insertion_point(builder_implements:vector_tile.Tile.Value)
           com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+            getDescriptor() {
           return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Value_descriptor;
         }
 
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
           return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Value_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.class, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder.class);
@@ -892,15 +805,18 @@ public final class VectorTile {
         }
 
         private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           }
         }
+        private static Builder create() {
+          return new Builder();
+        }
+
         public Builder clear() {
           super.clear();
           stringValue_ = "";
@@ -920,8 +836,12 @@ public final class VectorTile {
           return this;
         }
 
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
         public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+            getDescriptorForType() {
           return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Value_descriptor;
         }
 
@@ -974,55 +894,6 @@ public final class VectorTile {
           return result;
         }
 
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public <Type> Builder setExtension(
-            com.google.protobuf.GeneratedMessage.GeneratedExtension<
-                com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, Type> extension,
-            Type value) {
-          return (Builder) super.setExtension(extension, value);
-        }
-        public <Type> Builder setExtension(
-            com.google.protobuf.GeneratedMessage.GeneratedExtension<
-                com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, java.util.List<Type>> extension,
-            int index, Type value) {
-          return (Builder) super.setExtension(extension, index, value);
-        }
-        public <Type> Builder addExtension(
-            com.google.protobuf.GeneratedMessage.GeneratedExtension<
-                com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, java.util.List<Type>> extension,
-            Type value) {
-          return (Builder) super.addExtension(extension, value);
-        }
-        public <Type> Builder clearExtension(
-            com.google.protobuf.GeneratedMessage.GeneratedExtension<
-                com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, ?> extension) {
-          return (Builder) super.clearExtension(extension);
-        }
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value) {
             return mergeFrom((com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value)other);
@@ -1058,13 +929,13 @@ public final class VectorTile {
             setBoolValue(other.getBoolValue());
           }
           this.mergeExtensionFields(other);
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
+          this.mergeUnknownFields(other.getUnknownFields());
           return this;
         }
 
         public final boolean isInitialized() {
           if (!extensionsAreInitialized()) {
+            
             return false;
           }
           return true;
@@ -1079,7 +950,7 @@ public final class VectorTile {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage = (com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
+            throw e;
           } finally {
             if (parsedMessage != null) {
               mergeFrom(parsedMessage);
@@ -1091,21 +962,21 @@ public final class VectorTile {
 
         private java.lang.Object stringValue_ = "";
         /**
+         * <code>optional string string_value = 1;</code>
+         *
          * <pre>
          * Exactly one of these values must be present in a valid message
          * </pre>
-         *
-         * <code>optional string string_value = 1;</code>
          */
         public boolean hasStringValue() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
         /**
+         * <code>optional string string_value = 1;</code>
+         *
          * <pre>
          * Exactly one of these values must be present in a valid message
          * </pre>
-         *
-         * <code>optional string string_value = 1;</code>
          */
         public java.lang.String getStringValue() {
           java.lang.Object ref = stringValue_;
@@ -1122,17 +993,17 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>optional string string_value = 1;</code>
+         *
          * <pre>
          * Exactly one of these values must be present in a valid message
          * </pre>
-         *
-         * <code>optional string string_value = 1;</code>
          */
         public com.google.protobuf.ByteString
-        getStringValueBytes() {
+            getStringValueBytes() {
           java.lang.Object ref = stringValue_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString b = 
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             stringValue_ = b;
@@ -1142,28 +1013,28 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>optional string string_value = 1;</code>
+         *
          * <pre>
          * Exactly one of these values must be present in a valid message
          * </pre>
-         *
-         * <code>optional string string_value = 1;</code>
          */
         public Builder setStringValue(
             java.lang.String value) {
           if (value == null) {
-            throw new NullPointerException();
-          }
-          bitField0_ |= 0x00000001;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
           stringValue_ = value;
           onChanged();
           return this;
         }
         /**
+         * <code>optional string string_value = 1;</code>
+         *
          * <pre>
          * Exactly one of these values must be present in a valid message
          * </pre>
-         *
-         * <code>optional string string_value = 1;</code>
          */
         public Builder clearStringValue() {
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -1172,18 +1043,18 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>optional string string_value = 1;</code>
+         *
          * <pre>
          * Exactly one of these values must be present in a valid message
          * </pre>
-         *
-         * <code>optional string string_value = 1;</code>
          */
         public Builder setStringValueBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
-            throw new NullPointerException();
-          }
-          bitField0_ |= 0x00000001;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
           stringValue_ = value;
           onChanged();
           return this;
@@ -1380,53 +1251,16 @@ public final class VectorTile {
           onChanged();
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
 
         // @@protoc_insertion_point(builder_scope:vector_tile.Tile.Value)
       }
 
-      // @@protoc_insertion_point(class_scope:vector_tile.Tile.Value)
-      private static final com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value();
+        defaultInstance = new Value(true);
+        defaultInstance.initFields();
       }
 
-      public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<Value>
-          PARSER = new com.google.protobuf.AbstractParser<Value>() {
-        public Value parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Value(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<Value> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Value> getParserForType() {
-        return PARSER;
-      }
-
-      public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
+      // @@protoc_insertion_point(class_scope:vector_tile.Tile.Value)
     }
 
     public interface FeatureOrBuilder extends
@@ -1443,123 +1277,125 @@ public final class VectorTile {
       long getId();
 
       /**
+       * <code>repeated uint32 tags = 2 [packed = true];</code>
+       *
        * <pre>
        * Tags of this feature are encoded as repeated pairs of
        * integers.
        * A detailed description of tags is located in sections
        * 4.2 and 4.4 of the specification
        * </pre>
-       *
-       * <code>repeated uint32 tags = 2 [packed = true];</code>
        */
       java.util.List<java.lang.Integer> getTagsList();
       /**
+       * <code>repeated uint32 tags = 2 [packed = true];</code>
+       *
        * <pre>
        * Tags of this feature are encoded as repeated pairs of
        * integers.
        * A detailed description of tags is located in sections
        * 4.2 and 4.4 of the specification
        * </pre>
-       *
-       * <code>repeated uint32 tags = 2 [packed = true];</code>
        */
       int getTagsCount();
       /**
+       * <code>repeated uint32 tags = 2 [packed = true];</code>
+       *
        * <pre>
        * Tags of this feature are encoded as repeated pairs of
        * integers.
        * A detailed description of tags is located in sections
        * 4.2 and 4.4 of the specification
        * </pre>
-       *
-       * <code>repeated uint32 tags = 2 [packed = true];</code>
        */
       int getTags(int index);
 
       /**
+       * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
+       *
        * <pre>
        * The type of geometry stored in this feature.
        * </pre>
-       *
-       * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
        */
       boolean hasType();
       /**
+       * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
+       *
        * <pre>
        * The type of geometry stored in this feature.
        * </pre>
-       *
-       * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
        */
       com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType getType();
 
       /**
+       * <code>repeated uint32 geometry = 4 [packed = true];</code>
+       *
        * <pre>
        * Contains a stream of commands and parameters (vertices).
        * A detailed description on geometry encoding is located in
        * section 4.3 of the specification.
        * </pre>
-       *
-       * <code>repeated uint32 geometry = 4 [packed = true];</code>
        */
       java.util.List<java.lang.Integer> getGeometryList();
       /**
+       * <code>repeated uint32 geometry = 4 [packed = true];</code>
+       *
        * <pre>
        * Contains a stream of commands and parameters (vertices).
        * A detailed description on geometry encoding is located in
        * section 4.3 of the specification.
        * </pre>
-       *
-       * <code>repeated uint32 geometry = 4 [packed = true];</code>
        */
       int getGeometryCount();
       /**
+       * <code>repeated uint32 geometry = 4 [packed = true];</code>
+       *
        * <pre>
        * Contains a stream of commands and parameters (vertices).
        * A detailed description on geometry encoding is located in
        * section 4.3 of the specification.
        * </pre>
-       *
-       * <code>repeated uint32 geometry = 4 [packed = true];</code>
        */
       int getGeometry(int index);
     }
     /**
+     * Protobuf type {@code vector_tile.Tile.Feature}
+     *
      * <pre>
      * Features are described in section 4.2 of the specification
      * </pre>
-     *
-     * Protobuf type {@code vector_tile.Tile.Feature}
      */
-    public  static final class Feature extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class Feature extends
+        com.google.protobuf.GeneratedMessage implements
         // @@protoc_insertion_point(message_implements:vector_tile.Tile.Feature)
         FeatureOrBuilder {
-      private static final long serialVersionUID = 0L;
       // Use Feature.newBuilder() to construct.
-      private Feature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      private Feature(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
+        this.unknownFields = builder.getUnknownFields();
       }
-      private Feature() {
-        id_ = 0L;
-        tags_ = java.util.Collections.emptyList();
-        type_ = 0;
-        geometry_ = java.util.Collections.emptyList();
+      private Feature(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final Feature defaultInstance;
+      public static Feature getDefaultInstance() {
+        return defaultInstance;
       }
 
+      public Feature getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+          getUnknownFields() {
         return this.unknownFields;
       }
       private Feature(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        initFields();
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1572,8 +1408,8 @@ public final class VectorTile {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1611,7 +1447,7 @@ public final class VectorTile {
                   unknownFields.mergeVarintField(3, rawValue);
                 } else {
                   bitField0_ |= 0x00000002;
-                  type_ = rawValue;
+                  type_ = value;
                 }
                 break;
               }
@@ -1642,7 +1478,7 @@ public final class VectorTile {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+              e.getMessage()).setUnfinishedMessage(this);
         } finally {
           if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
             tags_ = java.util.Collections.unmodifiableList(tags_);
@@ -1655,15 +1491,30 @@ public final class VectorTile {
         }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+          getDescriptor() {
         return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Feature_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
         return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Feature_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.class, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<Feature> PARSER =
+          new com.google.protobuf.AbstractParser<Feature>() {
+        public Feature parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Feature(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Feature> getParserForType() {
+        return PARSER;
       }
 
       private int bitField0_;
@@ -1685,41 +1536,41 @@ public final class VectorTile {
       public static final int TAGS_FIELD_NUMBER = 2;
       private java.util.List<java.lang.Integer> tags_;
       /**
+       * <code>repeated uint32 tags = 2 [packed = true];</code>
+       *
        * <pre>
        * Tags of this feature are encoded as repeated pairs of
        * integers.
        * A detailed description of tags is located in sections
        * 4.2 and 4.4 of the specification
        * </pre>
-       *
-       * <code>repeated uint32 tags = 2 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
-      getTagsList() {
+          getTagsList() {
         return tags_;
       }
       /**
+       * <code>repeated uint32 tags = 2 [packed = true];</code>
+       *
        * <pre>
        * Tags of this feature are encoded as repeated pairs of
        * integers.
        * A detailed description of tags is located in sections
        * 4.2 and 4.4 of the specification
        * </pre>
-       *
-       * <code>repeated uint32 tags = 2 [packed = true];</code>
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
+       * <code>repeated uint32 tags = 2 [packed = true];</code>
+       *
        * <pre>
        * Tags of this feature are encoded as repeated pairs of
        * integers.
        * A detailed description of tags is located in sections
        * 4.2 and 4.4 of the specification
        * </pre>
-       *
-       * <code>repeated uint32 tags = 2 [packed = true];</code>
        */
       public int getTags(int index) {
         return tags_.get(index);
@@ -1727,70 +1578,75 @@ public final class VectorTile {
       private int tagsMemoizedSerializedSize = -1;
 
       public static final int TYPE_FIELD_NUMBER = 3;
-      private int type_;
+      private com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType type_;
       /**
+       * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
+       *
        * <pre>
        * The type of geometry stored in this feature.
        * </pre>
-       *
-       * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
+       * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
+       *
        * <pre>
        * The type of geometry stored in this feature.
        * </pre>
-       *
-       * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
        */
       public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType getType() {
-        com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType result = com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType.valueOf(type_);
-        return result == null ? com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType.UNKNOWN : result;
+        return type_;
       }
 
       public static final int GEOMETRY_FIELD_NUMBER = 4;
       private java.util.List<java.lang.Integer> geometry_;
       /**
+       * <code>repeated uint32 geometry = 4 [packed = true];</code>
+       *
        * <pre>
        * Contains a stream of commands and parameters (vertices).
        * A detailed description on geometry encoding is located in
        * section 4.3 of the specification.
        * </pre>
-       *
-       * <code>repeated uint32 geometry = 4 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
-      getGeometryList() {
+          getGeometryList() {
         return geometry_;
       }
       /**
+       * <code>repeated uint32 geometry = 4 [packed = true];</code>
+       *
        * <pre>
        * Contains a stream of commands and parameters (vertices).
        * A detailed description on geometry encoding is located in
        * section 4.3 of the specification.
        * </pre>
-       *
-       * <code>repeated uint32 geometry = 4 [packed = true];</code>
        */
       public int getGeometryCount() {
         return geometry_.size();
       }
       /**
+       * <code>repeated uint32 geometry = 4 [packed = true];</code>
+       *
        * <pre>
        * Contains a stream of commands and parameters (vertices).
        * A detailed description on geometry encoding is located in
        * section 4.3 of the specification.
        * </pre>
-       *
-       * <code>repeated uint32 geometry = 4 [packed = true];</code>
        */
       public int getGeometry(int index) {
         return geometry_.get(index);
       }
       private int geometryMemoizedSerializedSize = -1;
 
+      private void initFields() {
+        id_ = 0L;
+        tags_ = java.util.Collections.emptyList();
+        type_ = com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType.UNKNOWN;
+        geometry_ = java.util.Collections.emptyList();
+      }
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -1802,45 +1658,46 @@ public final class VectorTile {
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
-          throws java.io.IOException {
+                          throws java.io.IOException {
         getSerializedSize();
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           output.writeUInt64(1, id_);
         }
         if (getTagsList().size() > 0) {
-          output.writeUInt32NoTag(18);
-          output.writeUInt32NoTag(tagsMemoizedSerializedSize);
+          output.writeRawVarint32(18);
+          output.writeRawVarint32(tagsMemoizedSerializedSize);
         }
         for (int i = 0; i < tags_.size(); i++) {
           output.writeUInt32NoTag(tags_.get(i));
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeEnum(3, type_);
+          output.writeEnum(3, type_.getNumber());
         }
         if (getGeometryList().size() > 0) {
-          output.writeUInt32NoTag(34);
-          output.writeUInt32NoTag(geometryMemoizedSerializedSize);
+          output.writeRawVarint32(34);
+          output.writeRawVarint32(geometryMemoizedSerializedSize);
         }
         for (int i = 0; i < geometry_.size(); i++) {
           output.writeUInt32NoTag(geometry_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
+      private int memoizedSerializedSize = -1;
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
-              .computeUInt64Size(1, id_);
+            .computeUInt64Size(1, id_);
         }
         {
           int dataSize = 0;
           for (int i = 0; i < tags_.size(); i++) {
             dataSize += com.google.protobuf.CodedOutputStream
-                .computeUInt32SizeNoTag(tags_.get(i));
+              .computeUInt32SizeNoTag(tags_.get(i));
           }
           size += dataSize;
           if (!getTagsList().isEmpty()) {
@@ -1852,13 +1709,13 @@ public final class VectorTile {
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
           size += com.google.protobuf.CodedOutputStream
-              .computeEnumSize(3, type_);
+            .computeEnumSize(3, type_.getNumber());
         }
         {
           int dataSize = 0;
           for (int i = 0; i < geometry_.size(); i++) {
             dataSize += com.google.protobuf.CodedOutputStream
-                .computeUInt32SizeNoTag(geometry_.get(i));
+              .computeUInt32SizeNoTag(geometry_.get(i));
           }
           size += dataSize;
           if (!getGeometryList().isEmpty()) {
@@ -1868,79 +1725,18 @@ public final class VectorTile {
           }
           geometryMemoizedSerializedSize = dataSize;
         }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
         return size;
       }
 
+      private static final long serialVersionUID = 0L;
       @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-          return true;
-        }
-        if (!(obj instanceof com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature)) {
-          return super.equals(obj);
-        }
-        com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature other = (com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature) obj;
-
-        boolean result = true;
-        result = result && (hasId() == other.hasId());
-        if (hasId()) {
-          result = result && (getId()
-              == other.getId());
-        }
-        result = result && getTagsList()
-            .equals(other.getTagsList());
-        result = result && (hasType() == other.hasType());
-        if (hasType()) {
-          result = result && type_ == other.type_;
-        }
-        result = result && getGeometryList()
-            .equals(other.getGeometryList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
       }
 
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        if (hasId()) {
-          hash = (37 * hash) + ID_FIELD_NUMBER;
-          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-              getId());
-        }
-        if (getTagsCount() > 0) {
-          hash = (37 * hash) + TAGS_FIELD_NUMBER;
-          hash = (53 * hash) + getTagsList().hashCode();
-        }
-        if (hasType()) {
-          hash = (37 * hash) + TYPE_FIELD_NUMBER;
-          hash = (53 * hash) + type_;
-        }
-        if (getGeometryCount() > 0) {
-          hash = (37 * hash) + GEOMETRY_FIELD_NUMBER;
-          hash = (53 * hash) + getGeometryList().hashCode();
-        }
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1964,78 +1760,67 @@ public final class VectorTile {
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return PARSER.parseFrom(input);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return PARSER.parseFrom(input, extensionRegistry);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return PARSER.parseDelimitedFrom(input);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return PARSER.parseFrom(input);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return PARSER.parseFrom(input, extensionRegistry);
       }
 
+      public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
       public static Builder newBuilder(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        return newBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
+      public Builder toBuilder() { return newBuilder(this); }
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
       /**
+       * Protobuf type {@code vector_tile.Tile.Feature}
+       *
        * <pre>
        * Features are described in section 4.2 of the specification
        * </pre>
-       *
-       * Protobuf type {@code vector_tile.Tile.Feature}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:vector_tile.Tile.Feature)
           com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+            getDescriptor() {
           return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Feature_descriptor;
         }
 
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
           return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Feature_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.class, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder.class);
@@ -2047,30 +1832,37 @@ public final class VectorTile {
         }
 
         private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           }
         }
+        private static Builder create() {
+          return new Builder();
+        }
+
         public Builder clear() {
           super.clear();
           id_ = 0L;
           bitField0_ = (bitField0_ & ~0x00000001);
           tags_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
-          type_ = 0;
+          type_ = com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType.UNKNOWN;
           bitField0_ = (bitField0_ & ~0x00000004);
           geometry_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
         public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+            getDescriptorForType() {
           return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Feature_descriptor;
         }
 
@@ -2113,32 +1905,6 @@ public final class VectorTile {
           return result;
         }
 
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature) {
             return mergeFrom((com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature)other);
@@ -2176,8 +1942,7 @@ public final class VectorTile {
             }
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
+          this.mergeUnknownFields(other.getUnknownFields());
           return this;
         }
 
@@ -2194,7 +1959,7 @@ public final class VectorTile {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage = (com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
+            throw e;
           } finally {
             if (parsedMessage != null) {
               mergeFrom(parsedMessage);
@@ -2241,57 +2006,57 @@ public final class VectorTile {
           if (!((bitField0_ & 0x00000002) == 0x00000002)) {
             tags_ = new java.util.ArrayList<java.lang.Integer>(tags_);
             bitField0_ |= 0x00000002;
-          }
+           }
         }
         /**
+         * <code>repeated uint32 tags = 2 [packed = true];</code>
+         *
          * <pre>
          * Tags of this feature are encoded as repeated pairs of
          * integers.
          * A detailed description of tags is located in sections
          * 4.2 and 4.4 of the specification
          * </pre>
-         *
-         * <code>repeated uint32 tags = 2 [packed = true];</code>
          */
         public java.util.List<java.lang.Integer>
-        getTagsList() {
+            getTagsList() {
           return java.util.Collections.unmodifiableList(tags_);
         }
         /**
+         * <code>repeated uint32 tags = 2 [packed = true];</code>
+         *
          * <pre>
          * Tags of this feature are encoded as repeated pairs of
          * integers.
          * A detailed description of tags is located in sections
          * 4.2 and 4.4 of the specification
          * </pre>
-         *
-         * <code>repeated uint32 tags = 2 [packed = true];</code>
          */
         public int getTagsCount() {
           return tags_.size();
         }
         /**
+         * <code>repeated uint32 tags = 2 [packed = true];</code>
+         *
          * <pre>
          * Tags of this feature are encoded as repeated pairs of
          * integers.
          * A detailed description of tags is located in sections
          * 4.2 and 4.4 of the specification
          * </pre>
-         *
-         * <code>repeated uint32 tags = 2 [packed = true];</code>
          */
         public int getTags(int index) {
           return tags_.get(index);
         }
         /**
+         * <code>repeated uint32 tags = 2 [packed = true];</code>
+         *
          * <pre>
          * Tags of this feature are encoded as repeated pairs of
          * integers.
          * A detailed description of tags is located in sections
          * 4.2 and 4.4 of the specification
          * </pre>
-         *
-         * <code>repeated uint32 tags = 2 [packed = true];</code>
          */
         public Builder setTags(
             int index, int value) {
@@ -2301,14 +2066,14 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated uint32 tags = 2 [packed = true];</code>
+         *
          * <pre>
          * Tags of this feature are encoded as repeated pairs of
          * integers.
          * A detailed description of tags is located in sections
          * 4.2 and 4.4 of the specification
          * </pre>
-         *
-         * <code>repeated uint32 tags = 2 [packed = true];</code>
          */
         public Builder addTags(int value) {
           ensureTagsIsMutable();
@@ -2317,14 +2082,14 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated uint32 tags = 2 [packed = true];</code>
+         *
          * <pre>
          * Tags of this feature are encoded as repeated pairs of
          * integers.
          * A detailed description of tags is located in sections
          * 4.2 and 4.4 of the specification
          * </pre>
-         *
-         * <code>repeated uint32 tags = 2 [packed = true];</code>
          */
         public Builder addAllTags(
             java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -2335,14 +2100,14 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated uint32 tags = 2 [packed = true];</code>
+         *
          * <pre>
          * Tags of this feature are encoded as repeated pairs of
          * integers.
          * A detailed description of tags is located in sections
          * 4.2 and 4.4 of the specification
          * </pre>
-         *
-         * <code>repeated uint32 tags = 2 [packed = true];</code>
          */
         public Builder clearTags() {
           tags_ = java.util.Collections.emptyList();
@@ -2351,54 +2116,53 @@ public final class VectorTile {
           return this;
         }
 
-        private int type_ = 0;
+        private com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType type_ = com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType.UNKNOWN;
         /**
+         * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
+         *
          * <pre>
          * The type of geometry stored in this feature.
          * </pre>
-         *
-         * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
          */
         public boolean hasType() {
           return ((bitField0_ & 0x00000004) == 0x00000004);
         }
         /**
+         * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
+         *
          * <pre>
          * The type of geometry stored in this feature.
          * </pre>
-         *
-         * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
          */
         public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType getType() {
-          com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType result = com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType.valueOf(type_);
-          return result == null ? com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType.UNKNOWN : result;
+          return type_;
         }
         /**
+         * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
+         *
          * <pre>
          * The type of geometry stored in this feature.
          * </pre>
-         *
-         * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
          */
         public Builder setType(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType value) {
           if (value == null) {
             throw new NullPointerException();
           }
           bitField0_ |= 0x00000004;
-          type_ = value.getNumber();
+          type_ = value;
           onChanged();
           return this;
         }
         /**
+         * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
+         *
          * <pre>
          * The type of geometry stored in this feature.
          * </pre>
-         *
-         * <code>optional .vector_tile.Tile.GeomType type = 3 [default = UNKNOWN];</code>
          */
         public Builder clearType() {
           bitField0_ = (bitField0_ & ~0x00000004);
-          type_ = 0;
+          type_ = com.wdtinc.mapbox_vector_tile.VectorTile.Tile.GeomType.UNKNOWN;
           onChanged();
           return this;
         }
@@ -2408,53 +2172,53 @@ public final class VectorTile {
           if (!((bitField0_ & 0x00000008) == 0x00000008)) {
             geometry_ = new java.util.ArrayList<java.lang.Integer>(geometry_);
             bitField0_ |= 0x00000008;
-          }
+           }
         }
         /**
+         * <code>repeated uint32 geometry = 4 [packed = true];</code>
+         *
          * <pre>
          * Contains a stream of commands and parameters (vertices).
          * A detailed description on geometry encoding is located in
          * section 4.3 of the specification.
          * </pre>
-         *
-         * <code>repeated uint32 geometry = 4 [packed = true];</code>
          */
         public java.util.List<java.lang.Integer>
-        getGeometryList() {
+            getGeometryList() {
           return java.util.Collections.unmodifiableList(geometry_);
         }
         /**
+         * <code>repeated uint32 geometry = 4 [packed = true];</code>
+         *
          * <pre>
          * Contains a stream of commands and parameters (vertices).
          * A detailed description on geometry encoding is located in
          * section 4.3 of the specification.
          * </pre>
-         *
-         * <code>repeated uint32 geometry = 4 [packed = true];</code>
          */
         public int getGeometryCount() {
           return geometry_.size();
         }
         /**
+         * <code>repeated uint32 geometry = 4 [packed = true];</code>
+         *
          * <pre>
          * Contains a stream of commands and parameters (vertices).
          * A detailed description on geometry encoding is located in
          * section 4.3 of the specification.
          * </pre>
-         *
-         * <code>repeated uint32 geometry = 4 [packed = true];</code>
          */
         public int getGeometry(int index) {
           return geometry_.get(index);
         }
         /**
+         * <code>repeated uint32 geometry = 4 [packed = true];</code>
+         *
          * <pre>
          * Contains a stream of commands and parameters (vertices).
          * A detailed description on geometry encoding is located in
          * section 4.3 of the specification.
          * </pre>
-         *
-         * <code>repeated uint32 geometry = 4 [packed = true];</code>
          */
         public Builder setGeometry(
             int index, int value) {
@@ -2464,13 +2228,13 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated uint32 geometry = 4 [packed = true];</code>
+         *
          * <pre>
          * Contains a stream of commands and parameters (vertices).
          * A detailed description on geometry encoding is located in
          * section 4.3 of the specification.
          * </pre>
-         *
-         * <code>repeated uint32 geometry = 4 [packed = true];</code>
          */
         public Builder addGeometry(int value) {
           ensureGeometryIsMutable();
@@ -2479,13 +2243,13 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated uint32 geometry = 4 [packed = true];</code>
+         *
          * <pre>
          * Contains a stream of commands and parameters (vertices).
          * A detailed description on geometry encoding is located in
          * section 4.3 of the specification.
          * </pre>
-         *
-         * <code>repeated uint32 geometry = 4 [packed = true];</code>
          */
         public Builder addAllGeometry(
             java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -2496,13 +2260,13 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated uint32 geometry = 4 [packed = true];</code>
+         *
          * <pre>
          * Contains a stream of commands and parameters (vertices).
          * A detailed description on geometry encoding is located in
          * section 4.3 of the specification.
          * </pre>
-         *
-         * <code>repeated uint32 geometry = 4 [packed = true];</code>
          */
         public Builder clearGeometry() {
           geometry_ = java.util.Collections.emptyList();
@@ -2510,80 +2274,43 @@ public final class VectorTile {
           onChanged();
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
 
         // @@protoc_insertion_point(builder_scope:vector_tile.Tile.Feature)
       }
 
-      // @@protoc_insertion_point(class_scope:vector_tile.Tile.Feature)
-      private static final com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature();
+        defaultInstance = new Feature(true);
+        defaultInstance.initFields();
       }
 
-      public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<Feature>
-          PARSER = new com.google.protobuf.AbstractParser<Feature>() {
-        public Feature parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Feature(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<Feature> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Feature> getParserForType() {
-        return PARSER;
-      }
-
-      public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
+      // @@protoc_insertion_point(class_scope:vector_tile.Tile.Feature)
     }
 
     public interface LayerOrBuilder extends
         // @@protoc_insertion_point(interface_extends:vector_tile.Tile.Layer)
-        com.google.protobuf.GeneratedMessageV3.
+        com.google.protobuf.GeneratedMessage.
             ExtendableMessageOrBuilder<Layer> {
 
       /**
+       * <code>required uint32 version = 15 [default = 1];</code>
+       *
        * <pre>
        * Any compliant implementation must first read the version
        * number encoded in this message and choose the correct
        * implementation for this version number before proceeding to
        * decode other parts of this message.
        * </pre>
-       *
-       * <code>required uint32 version = 15 [default = 1];</code>
        */
       boolean hasVersion();
       /**
+       * <code>required uint32 version = 15 [default = 1];</code>
+       *
        * <pre>
        * Any compliant implementation must first read the version
        * number encoded in this message and choose the correct
        * implementation for this version number before proceeding to
        * decode other parts of this message.
        * </pre>
-       *
-       * <code>required uint32 version = 15 [default = 1];</code>
        */
       int getVersion();
 
@@ -2599,189 +2326,189 @@ public final class VectorTile {
        * <code>required string name = 1;</code>
        */
       com.google.protobuf.ByteString
-      getNameBytes();
+          getNameBytes();
 
       /**
+       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+       *
        * <pre>
        * The actual features in this tile.
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
        */
-      java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature>
-      getFeaturesList();
+      java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature> 
+          getFeaturesList();
       /**
+       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+       *
        * <pre>
        * The actual features in this tile.
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
        */
       com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature getFeatures(int index);
       /**
+       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+       *
        * <pre>
        * The actual features in this tile.
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
        */
       int getFeaturesCount();
       /**
+       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+       *
        * <pre>
        * The actual features in this tile.
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
        */
-      java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder>
-      getFeaturesOrBuilderList();
+      java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder> 
+          getFeaturesOrBuilderList();
       /**
+       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+       *
        * <pre>
        * The actual features in this tile.
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
        */
       com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder getFeaturesOrBuilder(
           int index);
 
       /**
+       * <code>repeated string keys = 3;</code>
+       *
        * <pre>
        * Dictionary encoding for keys
        * </pre>
-       *
-       * <code>repeated string keys = 3;</code>
        */
-      java.util.List<java.lang.String>
-      getKeysList();
+      com.google.protobuf.ProtocolStringList
+          getKeysList();
       /**
+       * <code>repeated string keys = 3;</code>
+       *
        * <pre>
        * Dictionary encoding for keys
        * </pre>
-       *
-       * <code>repeated string keys = 3;</code>
        */
       int getKeysCount();
       /**
+       * <code>repeated string keys = 3;</code>
+       *
        * <pre>
        * Dictionary encoding for keys
        * </pre>
-       *
-       * <code>repeated string keys = 3;</code>
        */
       java.lang.String getKeys(int index);
       /**
+       * <code>repeated string keys = 3;</code>
+       *
        * <pre>
        * Dictionary encoding for keys
        * </pre>
-       *
-       * <code>repeated string keys = 3;</code>
        */
       com.google.protobuf.ByteString
-      getKeysBytes(int index);
+          getKeysBytes(int index);
 
       /**
+       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+       *
        * <pre>
        * Dictionary encoding for values
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
        */
-      java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value>
-      getValuesList();
+      java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value> 
+          getValuesList();
       /**
+       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+       *
        * <pre>
        * Dictionary encoding for values
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
        */
       com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value getValues(int index);
       /**
+       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+       *
        * <pre>
        * Dictionary encoding for values
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
        */
       int getValuesCount();
       /**
+       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+       *
        * <pre>
        * Dictionary encoding for values
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
        */
-      java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder>
-      getValuesOrBuilderList();
+      java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder> 
+          getValuesOrBuilderList();
       /**
+       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+       *
        * <pre>
        * Dictionary encoding for values
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
        */
       com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder getValuesOrBuilder(
           int index);
 
       /**
+       * <code>optional uint32 extent = 5 [default = 4096];</code>
+       *
        * <pre>
        * Although this is an "optional" field it is required by the specification.
        * See https://github.com/mapbox/vector-tile-spec/issues/47
        * </pre>
-       *
-       * <code>optional uint32 extent = 5 [default = 4096];</code>
        */
       boolean hasExtent();
       /**
+       * <code>optional uint32 extent = 5 [default = 4096];</code>
+       *
        * <pre>
        * Although this is an "optional" field it is required by the specification.
        * See https://github.com/mapbox/vector-tile-spec/issues/47
        * </pre>
-       *
-       * <code>optional uint32 extent = 5 [default = 4096];</code>
        */
       int getExtent();
     }
     /**
+     * Protobuf type {@code vector_tile.Tile.Layer}
+     *
      * <pre>
      * Layers are described in section 4.1 of the specification
      * </pre>
-     *
-     * Protobuf type {@code vector_tile.Tile.Layer}
      */
-    public  static final class Layer extends
-        com.google.protobuf.GeneratedMessageV3.ExtendableMessage<
-            Layer> implements
+    public static final class Layer extends
+        com.google.protobuf.GeneratedMessage.ExtendableMessage<
+          Layer> implements
         // @@protoc_insertion_point(message_implements:vector_tile.Tile.Layer)
         LayerOrBuilder {
-      private static final long serialVersionUID = 0L;
       // Use Layer.newBuilder() to construct.
-      private Layer(com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, ?> builder) {
+      private Layer(com.google.protobuf.GeneratedMessage.ExtendableBuilder<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, ?> builder) {
         super(builder);
+        this.unknownFields = builder.getUnknownFields();
       }
-      private Layer() {
-        version_ = 1;
-        name_ = "";
-        features_ = java.util.Collections.emptyList();
-        keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        values_ = java.util.Collections.emptyList();
-        extent_ = 4096;
+      private Layer(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final Layer defaultInstance;
+      public static Layer getDefaultInstance() {
+        return defaultInstance;
       }
 
+      public Layer getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+          getUnknownFields() {
         return this.unknownFields;
       }
       private Layer(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        initFields();
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2794,8 +2521,8 @@ public final class VectorTile {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -2811,8 +2538,7 @@ public final class VectorTile {
                   features_ = new java.util.ArrayList<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature>();
                   mutable_bitField0_ |= 0x00000004;
                 }
-                features_.add(
-                    input.readMessage(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.PARSER, extensionRegistry));
+                features_.add(input.readMessage(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.PARSER, extensionRegistry));
                 break;
               }
               case 26: {
@@ -2829,8 +2555,7 @@ public final class VectorTile {
                   values_ = new java.util.ArrayList<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value>();
                   mutable_bitField0_ |= 0x00000010;
                 }
-                values_.add(
-                    input.readMessage(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.PARSER, extensionRegistry));
+                values_.add(input.readMessage(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.PARSER, extensionRegistry));
                 break;
               }
               case 40: {
@@ -2849,7 +2574,7 @@ public final class VectorTile {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+              e.getMessage()).setUnfinishedMessage(this);
         } finally {
           if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
             features_ = java.util.Collections.unmodifiableList(features_);
@@ -2865,49 +2590,64 @@ public final class VectorTile {
         }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+          getDescriptor() {
         return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Layer_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
         return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Layer_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.class, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<Layer> PARSER =
+          new com.google.protobuf.AbstractParser<Layer>() {
+        public Layer parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Layer(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Layer> getParserForType() {
+        return PARSER;
       }
 
       private int bitField0_;
       public static final int VERSION_FIELD_NUMBER = 15;
       private int version_;
       /**
+       * <code>required uint32 version = 15 [default = 1];</code>
+       *
        * <pre>
        * Any compliant implementation must first read the version
        * number encoded in this message and choose the correct
        * implementation for this version number before proceeding to
        * decode other parts of this message.
        * </pre>
-       *
-       * <code>required uint32 version = 15 [default = 1];</code>
        */
       public boolean hasVersion() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
+       * <code>required uint32 version = 15 [default = 1];</code>
+       *
        * <pre>
        * Any compliant implementation must first read the version
        * number encoded in this message and choose the correct
        * implementation for this version number before proceeding to
        * decode other parts of this message.
        * </pre>
-       *
-       * <code>required uint32 version = 15 [default = 1];</code>
        */
       public int getVersion() {
         return version_;
       }
 
       public static final int NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object name_;
+      private java.lang.Object name_;
       /**
        * <code>required string name = 1;</code>
        */
@@ -2922,7 +2662,7 @@ public final class VectorTile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs =
+          com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -2935,10 +2675,10 @@ public final class VectorTile {
        * <code>required string name = 1;</code>
        */
       public com.google.protobuf.ByteString
-      getNameBytes() {
+          getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
@@ -2951,52 +2691,52 @@ public final class VectorTile {
       public static final int FEATURES_FIELD_NUMBER = 2;
       private java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature> features_;
       /**
+       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+       *
        * <pre>
        * The actual features in this tile.
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
        */
       public java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature> getFeaturesList() {
         return features_;
       }
       /**
+       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+       *
        * <pre>
        * The actual features in this tile.
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
        */
-      public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder>
-      getFeaturesOrBuilderList() {
+      public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder> 
+          getFeaturesOrBuilderList() {
         return features_;
       }
       /**
+       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+       *
        * <pre>
        * The actual features in this tile.
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
        */
       public int getFeaturesCount() {
         return features_.size();
       }
       /**
+       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+       *
        * <pre>
        * The actual features in this tile.
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
        */
       public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature getFeatures(int index) {
         return features_.get(index);
       }
       /**
+       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+       *
        * <pre>
        * The actual features in this tile.
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
        */
       public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder getFeaturesOrBuilder(
           int index) {
@@ -3006,97 +2746,97 @@ public final class VectorTile {
       public static final int KEYS_FIELD_NUMBER = 3;
       private com.google.protobuf.LazyStringList keys_;
       /**
+       * <code>repeated string keys = 3;</code>
+       *
        * <pre>
        * Dictionary encoding for keys
        * </pre>
-       *
-       * <code>repeated string keys = 3;</code>
        */
       public com.google.protobuf.ProtocolStringList
-      getKeysList() {
+          getKeysList() {
         return keys_;
       }
       /**
+       * <code>repeated string keys = 3;</code>
+       *
        * <pre>
        * Dictionary encoding for keys
        * </pre>
-       *
-       * <code>repeated string keys = 3;</code>
        */
       public int getKeysCount() {
         return keys_.size();
       }
       /**
+       * <code>repeated string keys = 3;</code>
+       *
        * <pre>
        * Dictionary encoding for keys
        * </pre>
-       *
-       * <code>repeated string keys = 3;</code>
        */
       public java.lang.String getKeys(int index) {
         return keys_.get(index);
       }
       /**
+       * <code>repeated string keys = 3;</code>
+       *
        * <pre>
        * Dictionary encoding for keys
        * </pre>
-       *
-       * <code>repeated string keys = 3;</code>
        */
       public com.google.protobuf.ByteString
-      getKeysBytes(int index) {
+          getKeysBytes(int index) {
         return keys_.getByteString(index);
       }
 
       public static final int VALUES_FIELD_NUMBER = 4;
       private java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value> values_;
       /**
+       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+       *
        * <pre>
        * Dictionary encoding for values
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
        */
       public java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value> getValuesList() {
         return values_;
       }
       /**
+       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+       *
        * <pre>
        * Dictionary encoding for values
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
        */
-      public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder>
-      getValuesOrBuilderList() {
+      public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder> 
+          getValuesOrBuilderList() {
         return values_;
       }
       /**
+       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+       *
        * <pre>
        * Dictionary encoding for values
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
        */
       public int getValuesCount() {
         return values_.size();
       }
       /**
+       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+       *
        * <pre>
        * Dictionary encoding for values
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
        */
       public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value getValues(int index) {
         return values_.get(index);
       }
       /**
+       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+       *
        * <pre>
        * Dictionary encoding for values
        * </pre>
-       *
-       * <code>repeated .vector_tile.Tile.Value values = 4;</code>
        */
       public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder getValuesOrBuilder(
           int index) {
@@ -3106,28 +2846,36 @@ public final class VectorTile {
       public static final int EXTENT_FIELD_NUMBER = 5;
       private int extent_;
       /**
+       * <code>optional uint32 extent = 5 [default = 4096];</code>
+       *
        * <pre>
        * Although this is an "optional" field it is required by the specification.
        * See https://github.com/mapbox/vector-tile-spec/issues/47
        * </pre>
-       *
-       * <code>optional uint32 extent = 5 [default = 4096];</code>
        */
       public boolean hasExtent() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
+       * <code>optional uint32 extent = 5 [default = 4096];</code>
+       *
        * <pre>
        * Although this is an "optional" field it is required by the specification.
        * See https://github.com/mapbox/vector-tile-spec/issues/47
        * </pre>
-       *
-       * <code>optional uint32 extent = 5 [default = 4096];</code>
        */
       public int getExtent() {
         return extent_;
       }
 
+      private void initFields() {
+        version_ = 1;
+        name_ = "";
+        features_ = java.util.Collections.emptyList();
+        keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        values_ = java.util.Collections.emptyList();
+        extent_ = 4096;
+      }
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -3157,18 +2905,19 @@ public final class VectorTile {
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
-          throws java.io.IOException {
-        com.google.protobuf.GeneratedMessageV3
-            .ExtendableMessage<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer>.ExtensionWriter
-            extensionWriter = newExtensionWriter();
+                          throws java.io.IOException {
+        getSerializedSize();
+        com.google.protobuf.GeneratedMessage
+          .ExtendableMessage<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer>.ExtensionWriter extensionWriter =
+            newExtensionWriter();
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+          output.writeBytes(1, getNameBytes());
         }
         for (int i = 0; i < features_.size(); i++) {
           output.writeMessage(2, features_.get(i));
         }
         for (int i = 0; i < keys_.size(); i++) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, keys_.getRaw(i));
+          output.writeBytes(3, keys_.getByteString(i));
         }
         for (int i = 0; i < values_.size(); i++) {
           output.writeMessage(4, values_.get(i));
@@ -3180,133 +2929,57 @@ public final class VectorTile {
           output.writeUInt32(15, version_);
         }
         extensionWriter.writeUntil(536870912, output);
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
+      private int memoizedSerializedSize = -1;
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(1, getNameBytes());
         }
         for (int i = 0; i < features_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(2, features_.get(i));
+            .computeMessageSize(2, features_.get(i));
         }
         {
           int dataSize = 0;
           for (int i = 0; i < keys_.size(); i++) {
-            dataSize += computeStringSizeNoTag(keys_.getRaw(i));
+            dataSize += com.google.protobuf.CodedOutputStream
+              .computeBytesSizeNoTag(keys_.getByteString(i));
           }
           size += dataSize;
           size += 1 * getKeysList().size();
         }
         for (int i = 0; i < values_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(4, values_.get(i));
+            .computeMessageSize(4, values_.get(i));
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
           size += com.google.protobuf.CodedOutputStream
-              .computeUInt32Size(5, extent_);
+            .computeUInt32Size(5, extent_);
         }
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
-              .computeUInt32Size(15, version_);
+            .computeUInt32Size(15, version_);
         }
         size += extensionsSerializedSize();
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
         return size;
       }
 
+      private static final long serialVersionUID = 0L;
       @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-          return true;
-        }
-        if (!(obj instanceof com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer)) {
-          return super.equals(obj);
-        }
-        com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer other = (com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer) obj;
-
-        boolean result = true;
-        result = result && (hasVersion() == other.hasVersion());
-        if (hasVersion()) {
-          result = result && (getVersion()
-              == other.getVersion());
-        }
-        result = result && (hasName() == other.hasName());
-        if (hasName()) {
-          result = result && getName()
-              .equals(other.getName());
-        }
-        result = result && getFeaturesList()
-            .equals(other.getFeaturesList());
-        result = result && getKeysList()
-            .equals(other.getKeysList());
-        result = result && getValuesList()
-            .equals(other.getValuesList());
-        result = result && (hasExtent() == other.hasExtent());
-        if (hasExtent()) {
-          result = result && (getExtent()
-              == other.getExtent());
-        }
-        result = result && unknownFields.equals(other.unknownFields);
-        result = result &&
-            getExtensionFields().equals(other.getExtensionFields());
-        return result;
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
       }
 
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        if (hasVersion()) {
-          hash = (37 * hash) + VERSION_FIELD_NUMBER;
-          hash = (53 * hash) + getVersion();
-        }
-        if (hasName()) {
-          hash = (37 * hash) + NAME_FIELD_NUMBER;
-          hash = (53 * hash) + getName().hashCode();
-        }
-        if (getFeaturesCount() > 0) {
-          hash = (37 * hash) + FEATURES_FIELD_NUMBER;
-          hash = (53 * hash) + getFeaturesList().hashCode();
-        }
-        if (getKeysCount() > 0) {
-          hash = (37 * hash) + KEYS_FIELD_NUMBER;
-          hash = (53 * hash) + getKeysList().hashCode();
-        }
-        if (getValuesCount() > 0) {
-          hash = (37 * hash) + VALUES_FIELD_NUMBER;
-          hash = (53 * hash) + getValuesList().hashCode();
-        }
-        if (hasExtent()) {
-          hash = (37 * hash) + EXTENT_FIELD_NUMBER;
-          hash = (53 * hash) + getExtent();
-        }
-        hash = hashFields(hash, getExtensionFields());
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3330,79 +3003,68 @@ public final class VectorTile {
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return PARSER.parseFrom(input);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return PARSER.parseFrom(input, extensionRegistry);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return PARSER.parseDelimitedFrom(input);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return PARSER.parseFrom(input);
       }
       public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return PARSER.parseFrom(input, extensionRegistry);
       }
 
+      public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
       public static Builder newBuilder(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        return newBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
+      public Builder toBuilder() { return newBuilder(this); }
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
       /**
+       * Protobuf type {@code vector_tile.Tile.Layer}
+       *
        * <pre>
        * Layers are described in section 4.1 of the specification
        * </pre>
-       *
-       * Protobuf type {@code vector_tile.Tile.Layer}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<
-              com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, Builder> implements
+          com.google.protobuf.GeneratedMessage.ExtendableBuilder<
+            com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, Builder> implements
           // @@protoc_insertion_point(builder_implements:vector_tile.Tile.Layer)
           com.wdtinc.mapbox_vector_tile.VectorTile.Tile.LayerOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+            getDescriptor() {
           return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Layer_descriptor;
         }
 
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
           return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Layer_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.class, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.Builder.class);
@@ -3414,17 +3076,20 @@ public final class VectorTile {
         }
 
         private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
             getFeaturesFieldBuilder();
             getValuesFieldBuilder();
           }
         }
+        private static Builder create() {
+          return new Builder();
+        }
+
         public Builder clear() {
           super.clear();
           version_ = 1;
@@ -3450,8 +3115,12 @@ public final class VectorTile {
           return this;
         }
 
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
         public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+            getDescriptorForType() {
           return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_Layer_descriptor;
         }
 
@@ -3511,55 +3180,6 @@ public final class VectorTile {
           return result;
         }
 
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public <Type> Builder setExtension(
-            com.google.protobuf.GeneratedMessage.GeneratedExtension<
-                com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, Type> extension,
-            Type value) {
-          return (Builder) super.setExtension(extension, value);
-        }
-        public <Type> Builder setExtension(
-            com.google.protobuf.GeneratedMessage.GeneratedExtension<
-                com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, java.util.List<Type>> extension,
-            int index, Type value) {
-          return (Builder) super.setExtension(extension, index, value);
-        }
-        public <Type> Builder addExtension(
-            com.google.protobuf.GeneratedMessage.GeneratedExtension<
-                com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, java.util.List<Type>> extension,
-            Type value) {
-          return (Builder) super.addExtension(extension, value);
-        }
-        public <Type> Builder clearExtension(
-            com.google.protobuf.GeneratedMessage.GeneratedExtension<
-                com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, ?> extension) {
-          return (Builder) super.clearExtension(extension);
-        }
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer) {
             return mergeFrom((com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer)other);
@@ -3597,9 +3217,9 @@ public final class VectorTile {
                 featuresBuilder_ = null;
                 features_ = other.features_;
                 bitField0_ = (bitField0_ & ~0x00000004);
-                featuresBuilder_ =
-                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                        getFeaturesFieldBuilder() : null;
+                featuresBuilder_ = 
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                     getFeaturesFieldBuilder() : null;
               } else {
                 featuresBuilder_.addAllMessages(other.features_);
               }
@@ -3633,9 +3253,9 @@ public final class VectorTile {
                 valuesBuilder_ = null;
                 values_ = other.values_;
                 bitField0_ = (bitField0_ & ~0x00000010);
-                valuesBuilder_ =
-                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                        getValuesFieldBuilder() : null;
+                valuesBuilder_ = 
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                     getValuesFieldBuilder() : null;
               } else {
                 valuesBuilder_.addAllMessages(other.values_);
               }
@@ -3645,24 +3265,27 @@ public final class VectorTile {
             setExtent(other.getExtent());
           }
           this.mergeExtensionFields(other);
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
+          this.mergeUnknownFields(other.getUnknownFields());
           return this;
         }
 
         public final boolean isInitialized() {
           if (!hasVersion()) {
+            
             return false;
           }
           if (!hasName()) {
+            
             return false;
           }
           for (int i = 0; i < getValuesCount(); i++) {
             if (!getValues(i).isInitialized()) {
+              
               return false;
             }
           }
           if (!extensionsAreInitialized()) {
+            
             return false;
           }
           return true;
@@ -3677,7 +3300,7 @@ public final class VectorTile {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage = (com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
+            throw e;
           } finally {
             if (parsedMessage != null) {
               mergeFrom(parsedMessage);
@@ -3689,40 +3312,40 @@ public final class VectorTile {
 
         private int version_ = 1;
         /**
+         * <code>required uint32 version = 15 [default = 1];</code>
+         *
          * <pre>
          * Any compliant implementation must first read the version
          * number encoded in this message and choose the correct
          * implementation for this version number before proceeding to
          * decode other parts of this message.
          * </pre>
-         *
-         * <code>required uint32 version = 15 [default = 1];</code>
          */
         public boolean hasVersion() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
         /**
+         * <code>required uint32 version = 15 [default = 1];</code>
+         *
          * <pre>
          * Any compliant implementation must first read the version
          * number encoded in this message and choose the correct
          * implementation for this version number before proceeding to
          * decode other parts of this message.
          * </pre>
-         *
-         * <code>required uint32 version = 15 [default = 1];</code>
          */
         public int getVersion() {
           return version_;
         }
         /**
+         * <code>required uint32 version = 15 [default = 1];</code>
+         *
          * <pre>
          * Any compliant implementation must first read the version
          * number encoded in this message and choose the correct
          * implementation for this version number before proceeding to
          * decode other parts of this message.
          * </pre>
-         *
-         * <code>required uint32 version = 15 [default = 1];</code>
          */
         public Builder setVersion(int value) {
           bitField0_ |= 0x00000001;
@@ -3731,14 +3354,14 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>required uint32 version = 15 [default = 1];</code>
+         *
          * <pre>
          * Any compliant implementation must first read the version
          * number encoded in this message and choose the correct
          * implementation for this version number before proceeding to
          * decode other parts of this message.
          * </pre>
-         *
-         * <code>required uint32 version = 15 [default = 1];</code>
          */
         public Builder clearVersion() {
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -3775,10 +3398,10 @@ public final class VectorTile {
          * <code>required string name = 1;</code>
          */
         public com.google.protobuf.ByteString
-        getNameBytes() {
+            getNameBytes() {
           java.lang.Object ref = name_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString b = 
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             name_ = b;
@@ -3793,9 +3416,9 @@ public final class VectorTile {
         public Builder setName(
             java.lang.String value) {
           if (value == null) {
-            throw new NullPointerException();
-          }
-          bitField0_ |= 0x00000002;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
           name_ = value;
           onChanged();
           return this;
@@ -3815,32 +3438,32 @@ public final class VectorTile {
         public Builder setNameBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
-            throw new NullPointerException();
-          }
-          bitField0_ |= 0x00000002;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
           name_ = value;
           onChanged();
           return this;
         }
 
         private java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature> features_ =
-            java.util.Collections.emptyList();
+          java.util.Collections.emptyList();
         private void ensureFeaturesIsMutable() {
           if (!((bitField0_ & 0x00000004) == 0x00000004)) {
             features_ = new java.util.ArrayList<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature>(features_);
             bitField0_ |= 0x00000004;
-          }
+           }
         }
 
-        private com.google.protobuf.RepeatedFieldBuilderV3<
+        private com.google.protobuf.RepeatedFieldBuilder<
             com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder> featuresBuilder_;
 
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature> getFeaturesList() {
           if (featuresBuilder_ == null) {
@@ -3850,11 +3473,11 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public int getFeaturesCount() {
           if (featuresBuilder_ == null) {
@@ -3864,11 +3487,11 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature getFeatures(int index) {
           if (featuresBuilder_ == null) {
@@ -3878,11 +3501,11 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public Builder setFeatures(
             int index, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature value) {
@@ -3899,11 +3522,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public Builder setFeatures(
             int index, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder builderForValue) {
@@ -3917,11 +3540,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public Builder addFeatures(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature value) {
           if (featuresBuilder_ == null) {
@@ -3937,11 +3560,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public Builder addFeatures(
             int index, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature value) {
@@ -3958,11 +3581,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public Builder addFeatures(
             com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder builderForValue) {
@@ -3976,11 +3599,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public Builder addFeatures(
             int index, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder builderForValue) {
@@ -3994,11 +3617,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public Builder addAllFeatures(
             java.lang.Iterable<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature> values) {
@@ -4013,11 +3636,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public Builder clearFeatures() {
           if (featuresBuilder_ == null) {
@@ -4030,11 +3653,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public Builder removeFeatures(int index) {
           if (featuresBuilder_ == null) {
@@ -4047,22 +3670,22 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder getFeaturesBuilder(
             int index) {
           return getFeaturesFieldBuilder().getBuilder(index);
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder getFeaturesOrBuilder(
             int index) {
@@ -4072,14 +3695,14 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
-        public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder>
-        getFeaturesOrBuilderList() {
+        public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder> 
+             getFeaturesOrBuilderList() {
           if (featuresBuilder_ != null) {
             return featuresBuilder_.getMessageOrBuilderList();
           } else {
@@ -4087,22 +3710,22 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder addFeaturesBuilder() {
           return getFeaturesFieldBuilder().addBuilder(
               com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.getDefaultInstance());
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
         public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder addFeaturesBuilder(
             int index) {
@@ -4110,26 +3733,26 @@ public final class VectorTile {
               index, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.getDefaultInstance());
         }
         /**
+         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
+         *
          * <pre>
          * The actual features in this tile.
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Feature features = 2;</code>
          */
-        public java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder>
-        getFeaturesBuilderList() {
+        public java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder> 
+             getFeaturesBuilderList() {
           return getFeaturesFieldBuilder().getBuilderList();
         }
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder>
-        getFeaturesFieldBuilder() {
+        private com.google.protobuf.RepeatedFieldBuilder<
+            com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder> 
+            getFeaturesFieldBuilder() {
           if (featuresBuilder_ == null) {
-            featuresBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            featuresBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
                 com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Feature.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.FeatureOrBuilder>(
-                features_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
-                getParentForChildren(),
-                isClean());
+                    features_,
+                    ((bitField0_ & 0x00000004) == 0x00000004),
+                    getParentForChildren(),
+                    isClean());
             features_ = null;
           }
           return featuresBuilder_;
@@ -4140,90 +3763,90 @@ public final class VectorTile {
           if (!((bitField0_ & 0x00000008) == 0x00000008)) {
             keys_ = new com.google.protobuf.LazyStringArrayList(keys_);
             bitField0_ |= 0x00000008;
-          }
+           }
         }
         /**
+         * <code>repeated string keys = 3;</code>
+         *
          * <pre>
          * Dictionary encoding for keys
          * </pre>
-         *
-         * <code>repeated string keys = 3;</code>
          */
         public com.google.protobuf.ProtocolStringList
-        getKeysList() {
+            getKeysList() {
           return keys_.getUnmodifiableView();
         }
         /**
+         * <code>repeated string keys = 3;</code>
+         *
          * <pre>
          * Dictionary encoding for keys
          * </pre>
-         *
-         * <code>repeated string keys = 3;</code>
          */
         public int getKeysCount() {
           return keys_.size();
         }
         /**
+         * <code>repeated string keys = 3;</code>
+         *
          * <pre>
          * Dictionary encoding for keys
          * </pre>
-         *
-         * <code>repeated string keys = 3;</code>
          */
         public java.lang.String getKeys(int index) {
           return keys_.get(index);
         }
         /**
+         * <code>repeated string keys = 3;</code>
+         *
          * <pre>
          * Dictionary encoding for keys
          * </pre>
-         *
-         * <code>repeated string keys = 3;</code>
          */
         public com.google.protobuf.ByteString
-        getKeysBytes(int index) {
+            getKeysBytes(int index) {
           return keys_.getByteString(index);
         }
         /**
+         * <code>repeated string keys = 3;</code>
+         *
          * <pre>
          * Dictionary encoding for keys
          * </pre>
-         *
-         * <code>repeated string keys = 3;</code>
          */
         public Builder setKeys(
             int index, java.lang.String value) {
           if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureKeysIsMutable();
+    throw new NullPointerException();
+  }
+  ensureKeysIsMutable();
           keys_.set(index, value);
           onChanged();
           return this;
         }
         /**
+         * <code>repeated string keys = 3;</code>
+         *
          * <pre>
          * Dictionary encoding for keys
          * </pre>
-         *
-         * <code>repeated string keys = 3;</code>
          */
         public Builder addKeys(
             java.lang.String value) {
           if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureKeysIsMutable();
+    throw new NullPointerException();
+  }
+  ensureKeysIsMutable();
           keys_.add(value);
           onChanged();
           return this;
         }
         /**
+         * <code>repeated string keys = 3;</code>
+         *
          * <pre>
          * Dictionary encoding for keys
          * </pre>
-         *
-         * <code>repeated string keys = 3;</code>
          */
         public Builder addAllKeys(
             java.lang.Iterable<java.lang.String> values) {
@@ -4234,11 +3857,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated string keys = 3;</code>
+         *
          * <pre>
          * Dictionary encoding for keys
          * </pre>
-         *
-         * <code>repeated string keys = 3;</code>
          */
         public Builder clearKeys() {
           keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -4247,41 +3870,41 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated string keys = 3;</code>
+         *
          * <pre>
          * Dictionary encoding for keys
          * </pre>
-         *
-         * <code>repeated string keys = 3;</code>
          */
         public Builder addKeysBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureKeysIsMutable();
+    throw new NullPointerException();
+  }
+  ensureKeysIsMutable();
           keys_.add(value);
           onChanged();
           return this;
         }
 
         private java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value> values_ =
-            java.util.Collections.emptyList();
+          java.util.Collections.emptyList();
         private void ensureValuesIsMutable() {
           if (!((bitField0_ & 0x00000010) == 0x00000010)) {
             values_ = new java.util.ArrayList<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value>(values_);
             bitField0_ |= 0x00000010;
-          }
+           }
         }
 
-        private com.google.protobuf.RepeatedFieldBuilderV3<
+        private com.google.protobuf.RepeatedFieldBuilder<
             com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder> valuesBuilder_;
 
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value> getValuesList() {
           if (valuesBuilder_ == null) {
@@ -4291,11 +3914,11 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public int getValuesCount() {
           if (valuesBuilder_ == null) {
@@ -4305,11 +3928,11 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value getValues(int index) {
           if (valuesBuilder_ == null) {
@@ -4319,11 +3942,11 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public Builder setValues(
             int index, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value value) {
@@ -4340,11 +3963,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public Builder setValues(
             int index, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder builderForValue) {
@@ -4358,11 +3981,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public Builder addValues(com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value value) {
           if (valuesBuilder_ == null) {
@@ -4378,11 +4001,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public Builder addValues(
             int index, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value value) {
@@ -4399,11 +4022,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public Builder addValues(
             com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder builderForValue) {
@@ -4417,11 +4040,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public Builder addValues(
             int index, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder builderForValue) {
@@ -4435,11 +4058,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public Builder addAllValues(
             java.lang.Iterable<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value> values) {
@@ -4454,11 +4077,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public Builder clearValues() {
           if (valuesBuilder_ == null) {
@@ -4471,11 +4094,11 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public Builder removeValues(int index) {
           if (valuesBuilder_ == null) {
@@ -4488,22 +4111,22 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder getValuesBuilder(
             int index) {
           return getValuesFieldBuilder().getBuilder(index);
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder getValuesOrBuilder(
             int index) {
@@ -4513,14 +4136,14 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
-        public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder>
-        getValuesOrBuilderList() {
+        public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder> 
+             getValuesOrBuilderList() {
           if (valuesBuilder_ != null) {
             return valuesBuilder_.getMessageOrBuilderList();
           } else {
@@ -4528,22 +4151,22 @@ public final class VectorTile {
           }
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder addValuesBuilder() {
           return getValuesFieldBuilder().addBuilder(
               com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.getDefaultInstance());
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
         public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder addValuesBuilder(
             int index) {
@@ -4551,26 +4174,26 @@ public final class VectorTile {
               index, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.getDefaultInstance());
         }
         /**
+         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
+         *
          * <pre>
          * Dictionary encoding for values
          * </pre>
-         *
-         * <code>repeated .vector_tile.Tile.Value values = 4;</code>
          */
-        public java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder>
-        getValuesBuilderList() {
+        public java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder> 
+             getValuesBuilderList() {
           return getValuesFieldBuilder().getBuilderList();
         }
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder>
-        getValuesFieldBuilder() {
+        private com.google.protobuf.RepeatedFieldBuilder<
+            com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder> 
+            getValuesFieldBuilder() {
           if (valuesBuilder_ == null) {
-            valuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            valuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
                 com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Value.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.ValueOrBuilder>(
-                values_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
-                getParentForChildren(),
-                isClean());
+                    values_,
+                    ((bitField0_ & 0x00000010) == 0x00000010),
+                    getParentForChildren(),
+                    isClean());
             values_ = null;
           }
           return valuesBuilder_;
@@ -4578,34 +4201,34 @@ public final class VectorTile {
 
         private int extent_ = 4096;
         /**
+         * <code>optional uint32 extent = 5 [default = 4096];</code>
+         *
          * <pre>
          * Although this is an "optional" field it is required by the specification.
          * See https://github.com/mapbox/vector-tile-spec/issues/47
          * </pre>
-         *
-         * <code>optional uint32 extent = 5 [default = 4096];</code>
          */
         public boolean hasExtent() {
           return ((bitField0_ & 0x00000020) == 0x00000020);
         }
         /**
+         * <code>optional uint32 extent = 5 [default = 4096];</code>
+         *
          * <pre>
          * Although this is an "optional" field it is required by the specification.
          * See https://github.com/mapbox/vector-tile-spec/issues/47
          * </pre>
-         *
-         * <code>optional uint32 extent = 5 [default = 4096];</code>
          */
         public int getExtent() {
           return extent_;
         }
         /**
+         * <code>optional uint32 extent = 5 [default = 4096];</code>
+         *
          * <pre>
          * Although this is an "optional" field it is required by the specification.
          * See https://github.com/mapbox/vector-tile-spec/issues/47
          * </pre>
-         *
-         * <code>optional uint32 extent = 5 [default = 4096];</code>
          */
         public Builder setExtent(int value) {
           bitField0_ |= 0x00000020;
@@ -4614,12 +4237,12 @@ public final class VectorTile {
           return this;
         }
         /**
+         * <code>optional uint32 extent = 5 [default = 4096];</code>
+         *
          * <pre>
          * Although this is an "optional" field it is required by the specification.
          * See https://github.com/mapbox/vector-tile-spec/issues/47
          * </pre>
-         *
-         * <code>optional uint32 extent = 5 [default = 4096];</code>
          */
         public Builder clearExtent() {
           bitField0_ = (bitField0_ & ~0x00000020);
@@ -4627,53 +4250,16 @@ public final class VectorTile {
           onChanged();
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
 
         // @@protoc_insertion_point(builder_scope:vector_tile.Tile.Layer)
       }
 
-      // @@protoc_insertion_point(class_scope:vector_tile.Tile.Layer)
-      private static final com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer();
+        defaultInstance = new Layer(true);
+        defaultInstance.initFields();
       }
 
-      public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<Layer>
-          PARSER = new com.google.protobuf.AbstractParser<Layer>() {
-        public Layer parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Layer(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<Layer> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Layer> getParserForType() {
-        return PARSER;
-      }
-
-      public com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
+      // @@protoc_insertion_point(class_scope:vector_tile.Tile.Layer)
     }
 
     public static final int LAYERS_FIELD_NUMBER = 3;
@@ -4687,8 +4273,8 @@ public final class VectorTile {
     /**
      * <code>repeated .vector_tile.Tile.Layer layers = 3;</code>
      */
-    public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.LayerOrBuilder>
-    getLayersOrBuilderList() {
+    public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.LayerOrBuilder> 
+        getLayersOrBuilderList() {
       return layers_;
     }
     /**
@@ -4711,6 +4297,9 @@ public final class VectorTile {
       return layers_.get(index);
     }
 
+    private void initFields() {
+      layers_ = java.util.Collections.emptyList();
+    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -4732,79 +4321,41 @@ public final class VectorTile {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-        throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-          .ExtendableMessage<com.wdtinc.mapbox_vector_tile.VectorTile.Tile>.ExtensionWriter
-          extensionWriter = newExtensionWriter();
+                        throws java.io.IOException {
+      getSerializedSize();
+      com.google.protobuf.GeneratedMessage
+        .ExtendableMessage<com.wdtinc.mapbox_vector_tile.VectorTile.Tile>.ExtensionWriter extensionWriter =
+          newExtensionWriter();
       for (int i = 0; i < layers_.size(); i++) {
         output.writeMessage(3, layers_.get(i));
       }
       extensionWriter.writeUntil(8192, output);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
+    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
       for (int i = 0; i < layers_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, layers_.get(i));
+          .computeMessageSize(3, layers_.get(i));
       }
       size += extensionsSerializedSize();
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.wdtinc.mapbox_vector_tile.VectorTile.Tile)) {
-        return super.equals(obj);
-      }
-      com.wdtinc.mapbox_vector_tile.VectorTile.Tile other = (com.wdtinc.mapbox_vector_tile.VectorTile.Tile) obj;
-
-      boolean result = true;
-      result = result && getLayersList()
-          .equals(other.getLayersList());
-      result = result && unknownFields.equals(other.unknownFields);
-      result = result &&
-          getExtensionFields().equals(other.getExtensionFields());
-      return result;
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
     }
 
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getLayersCount() > 0) {
-        hash = (37 * hash) + LAYERS_FIELD_NUMBER;
-        hash = (53 * hash) + getLayersList().hashCode();
-      }
-      hash = hashFields(hash, getExtensionFields());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4828,57 +4379,46 @@ public final class VectorTile {
     }
     public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return PARSER.parseFrom(input);
     }
     public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return PARSER.parseFrom(input);
     }
     public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return PARSER.parseFrom(input, extensionRegistry);
     }
 
+    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
     public static Builder newBuilder(com.wdtinc.mapbox_vector_tile.VectorTile.Tile prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
+    public Builder toBuilder() { return newBuilder(this); }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -4886,17 +4426,17 @@ public final class VectorTile {
      * Protobuf type {@code vector_tile.Tile}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<
-            com.wdtinc.mapbox_vector_tile.VectorTile.Tile, Builder> implements
+        com.google.protobuf.GeneratedMessage.ExtendableBuilder<
+          com.wdtinc.mapbox_vector_tile.VectorTile.Tile, Builder> implements
         // @@protoc_insertion_point(builder_implements:vector_tile.Tile)
         com.wdtinc.mapbox_vector_tile.VectorTile.TileOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+          getDescriptor() {
         return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
         return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.wdtinc.mapbox_vector_tile.VectorTile.Tile.class, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Builder.class);
@@ -4908,16 +4448,19 @@ public final class VectorTile {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-            .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getLayersFieldBuilder();
         }
       }
+      private static Builder create() {
+        return new Builder();
+      }
+
       public Builder clear() {
         super.clear();
         if (layersBuilder_ == null) {
@@ -4929,8 +4472,12 @@ public final class VectorTile {
         return this;
       }
 
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
       public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
+          getDescriptorForType() {
         return com.wdtinc.mapbox_vector_tile.VectorTile.internal_static_vector_tile_Tile_descriptor;
       }
 
@@ -4962,55 +4509,6 @@ public final class VectorTile {
         return result;
       }
 
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public <Type> Builder setExtension(
-          com.google.protobuf.GeneratedMessage.GeneratedExtension<
-              com.wdtinc.mapbox_vector_tile.VectorTile.Tile, Type> extension,
-          Type value) {
-        return (Builder) super.setExtension(extension, value);
-      }
-      public <Type> Builder setExtension(
-          com.google.protobuf.GeneratedMessage.GeneratedExtension<
-              com.wdtinc.mapbox_vector_tile.VectorTile.Tile, java.util.List<Type>> extension,
-          int index, Type value) {
-        return (Builder) super.setExtension(extension, index, value);
-      }
-      public <Type> Builder addExtension(
-          com.google.protobuf.GeneratedMessage.GeneratedExtension<
-              com.wdtinc.mapbox_vector_tile.VectorTile.Tile, java.util.List<Type>> extension,
-          Type value) {
-        return (Builder) super.addExtension(extension, value);
-      }
-      public <Type> Builder clearExtension(
-          com.google.protobuf.GeneratedMessage.GeneratedExtension<
-              com.wdtinc.mapbox_vector_tile.VectorTile.Tile, ?> extension) {
-        return (Builder) super.clearExtension(extension);
-      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.wdtinc.mapbox_vector_tile.VectorTile.Tile) {
           return mergeFrom((com.wdtinc.mapbox_vector_tile.VectorTile.Tile)other);
@@ -5040,27 +4538,28 @@ public final class VectorTile {
               layersBuilder_ = null;
               layers_ = other.layers_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              layersBuilder_ =
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                      getLayersFieldBuilder() : null;
+              layersBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getLayersFieldBuilder() : null;
             } else {
               layersBuilder_.addAllMessages(other.layers_);
             }
           }
         }
         this.mergeExtensionFields(other);
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
+        this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
         for (int i = 0; i < getLayersCount(); i++) {
           if (!getLayers(i).isInitialized()) {
+            
             return false;
           }
         }
         if (!extensionsAreInitialized()) {
+          
           return false;
         }
         return true;
@@ -5075,7 +4574,7 @@ public final class VectorTile {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (com.wdtinc.mapbox_vector_tile.VectorTile.Tile) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          throw e;
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -5086,15 +4585,15 @@ public final class VectorTile {
       private int bitField0_;
 
       private java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer> layers_ =
-          java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
       private void ensureLayersIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           layers_ = new java.util.ArrayList<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer>(layers_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.RepeatedFieldBuilder<
           com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.LayerOrBuilder> layersBuilder_;
 
       /**
@@ -5280,8 +4779,8 @@ public final class VectorTile {
       /**
        * <code>repeated .vector_tile.Tile.Layer layers = 3;</code>
        */
-      public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.LayerOrBuilder>
-      getLayersOrBuilderList() {
+      public java.util.List<? extends com.wdtinc.mapbox_vector_tile.VectorTile.Tile.LayerOrBuilder> 
+           getLayersOrBuilderList() {
         if (layersBuilder_ != null) {
           return layersBuilder_.getMessageOrBuilderList();
         } else {
@@ -5306,119 +4805,82 @@ public final class VectorTile {
       /**
        * <code>repeated .vector_tile.Tile.Layer layers = 3;</code>
        */
-      public java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.Builder>
-      getLayersBuilderList() {
+      public java.util.List<com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.Builder> 
+           getLayersBuilderList() {
         return getLayersFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.LayerOrBuilder>
-      getLayersFieldBuilder() {
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.LayerOrBuilder> 
+          getLayersFieldBuilder() {
         if (layersBuilder_ == null) {
-          layersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          layersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.Layer.Builder, com.wdtinc.mapbox_vector_tile.VectorTile.Tile.LayerOrBuilder>(
-              layers_,
-              ((bitField0_ & 0x00000001) == 0x00000001),
-              getParentForChildren(),
-              isClean());
+                  layers_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
           layers_ = null;
         }
         return layersBuilder_;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
 
       // @@protoc_insertion_point(builder_scope:vector_tile.Tile)
     }
 
-    // @@protoc_insertion_point(class_scope:vector_tile.Tile)
-    private static final com.wdtinc.mapbox_vector_tile.VectorTile.Tile DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.wdtinc.mapbox_vector_tile.VectorTile.Tile();
+      defaultInstance = new Tile(true);
+      defaultInstance.initFields();
     }
 
-    public static com.wdtinc.mapbox_vector_tile.VectorTile.Tile getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Tile>
-        PARSER = new com.google.protobuf.AbstractParser<Tile>() {
-      public Tile parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Tile(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Tile> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Tile> getParserForType() {
-      return PARSER;
-    }
-
-    public com.wdtinc.mapbox_vector_tile.VectorTile.Tile getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
+    // @@protoc_insertion_point(class_scope:vector_tile.Tile)
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_vector_tile_Tile_descriptor;
-  private static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internal_static_vector_tile_Tile_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_vector_tile_Tile_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_vector_tile_Tile_Value_descriptor;
-  private static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internal_static_vector_tile_Tile_Value_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_vector_tile_Tile_Value_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_vector_tile_Tile_Feature_descriptor;
-  private static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internal_static_vector_tile_Tile_Feature_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_vector_tile_Tile_Feature_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_vector_tile_Tile_Layer_descriptor;
-  private static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internal_static_vector_tile_Tile_Layer_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_vector_tile_Tile_Layer_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
-  getDescriptor() {
+      getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-        "\n\021vector_tile.proto\022\013vector_tile\"\300\004\n\004Til" +
-            "e\022\'\n\006layers\030\003 \003(\0132\027.vector_tile.Tile.Lay" +
-            "er\032\241\001\n\005Value\022\024\n\014string_value\030\001 \001(\t\022\023\n\013fl" +
-            "oat_value\030\002 \001(\002\022\024\n\014double_value\030\003 \001(\001\022\021\n" +
-            "\tint_value\030\004 \001(\003\022\022\n\nuint_value\030\005 \001(\004\022\022\n\n" +
-            "sint_value\030\006 \001(\022\022\022\n\nbool_value\030\007 \001(\010*\010\010\010" +
-            "\020\200\200\200\200\002\032s\n\007Feature\022\r\n\002id\030\001 \001(\004:\0010\022\020\n\004tags" +
-            "\030\002 \003(\rB\002\020\001\0221\n\004type\030\003 \001(\0162\032.vector_tile.T" +
-            "ile.GeomType:\007UNKNOWN\022\024\n\010geometry\030\004 \003(\rB" +
-            "\002\020\001\032\255\001\n\005Layer\022\022\n\007version\030\017 \002(\r:\0011\022\014\n\004nam" +
-            "e\030\001 \002(\t\022+\n\010features\030\002 \003(\0132\031.vector_tile." +
-            "Tile.Feature\022\014\n\004keys\030\003 \003(\t\022\'\n\006values\030\004 \003" +
-            "(\0132\027.vector_tile.Tile.Value\022\024\n\006extent\030\005 " +
-            "\001(\r:\0044096*\010\010\020\020\200\200\200\200\002\"?\n\010GeomType\022\013\n\007UNKNO" +
-            "WN\020\000\022\t\n\005POINT\020\001\022\016\n\nLINESTRING\020\002\022\013\n\007POLYG" +
-            "ON\020\003*\005\010\020\020\200@B+\n\035com.wdtinc.mapbox_vector_" +
-            "tileB\nVectorTile"
+      "\n$src/main/resources/vector_tile.proto\022\013" +
+      "vector_tile\"\300\004\n\004Tile\022\'\n\006layers\030\003 \003(\0132\027.v" +
+      "ector_tile.Tile.Layer\032\241\001\n\005Value\022\024\n\014strin" +
+      "g_value\030\001 \001(\t\022\023\n\013float_value\030\002 \001(\002\022\024\n\014do" +
+      "uble_value\030\003 \001(\001\022\021\n\tint_value\030\004 \001(\003\022\022\n\nu" +
+      "int_value\030\005 \001(\004\022\022\n\nsint_value\030\006 \001(\022\022\022\n\nb" +
+      "ool_value\030\007 \001(\010*\010\010\010\020\200\200\200\200\002\032s\n\007Feature\022\r\n\002" +
+      "id\030\001 \001(\004:\0010\022\020\n\004tags\030\002 \003(\rB\002\020\001\0221\n\004type\030\003 " +
+      "\001(\0162\032.vector_tile.Tile.GeomType:\007UNKNOWN" +
+      "\022\024\n\010geometry\030\004 \003(\rB\002\020\001\032\255\001\n\005Layer\022\022\n\007vers",
+      "ion\030\017 \002(\r:\0011\022\014\n\004name\030\001 \002(\t\022+\n\010features\030\002" +
+      " \003(\0132\031.vector_tile.Tile.Feature\022\014\n\004keys\030" +
+      "\003 \003(\t\022\'\n\006values\030\004 \003(\0132\027.vector_tile.Tile" +
+      ".Value\022\024\n\006extent\030\005 \001(\r:\0044096*\010\010\020\020\200\200\200\200\002\"?" +
+      "\n\010GeomType\022\013\n\007UNKNOWN\020\000\022\t\n\005POINT\020\001\022\016\n\nLI" +
+      "NESTRING\020\002\022\013\n\007POLYGON\020\003*\005\010\020\020\200@B+\n\035com.wd" +
+      "tinc.mapbox_vector_tileB\nVectorTile"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5429,31 +4891,31 @@ public final class VectorTile {
           }
         };
     com.google.protobuf.Descriptors.FileDescriptor
-        .internalBuildGeneratedFileFrom(descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-            }, assigner);
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        }, assigner);
     internal_static_vector_tile_Tile_descriptor =
-        getDescriptor().getMessageTypes().get(0);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_vector_tile_Tile_fieldAccessorTable = new
-        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_vector_tile_Tile_descriptor,
         new java.lang.String[] { "Layers", });
     internal_static_vector_tile_Tile_Value_descriptor =
-        internal_static_vector_tile_Tile_descriptor.getNestedTypes().get(0);
+      internal_static_vector_tile_Tile_descriptor.getNestedTypes().get(0);
     internal_static_vector_tile_Tile_Value_fieldAccessorTable = new
-        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_vector_tile_Tile_Value_descriptor,
         new java.lang.String[] { "StringValue", "FloatValue", "DoubleValue", "IntValue", "UintValue", "SintValue", "BoolValue", });
     internal_static_vector_tile_Tile_Feature_descriptor =
-        internal_static_vector_tile_Tile_descriptor.getNestedTypes().get(1);
+      internal_static_vector_tile_Tile_descriptor.getNestedTypes().get(1);
     internal_static_vector_tile_Tile_Feature_fieldAccessorTable = new
-        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_vector_tile_Tile_Feature_descriptor,
         new java.lang.String[] { "Id", "Tags", "Type", "Geometry", });
     internal_static_vector_tile_Tile_Layer_descriptor =
-        internal_static_vector_tile_Tile_descriptor.getNestedTypes().get(2);
+      internal_static_vector_tile_Tile_descriptor.getNestedTypes().get(2);
     internal_static_vector_tile_Tile_Layer_fieldAccessorTable = new
-        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_vector_tile_Tile_Layer_descriptor,
         new java.lang.String[] { "Version", "Name", "Features", "Keys", "Values", "Extent", });
   }
