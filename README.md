@@ -39,19 +39,9 @@ Latest version using JTS 15 with android API level 15 support:
 
 ```xml
 <dependency>
-    <groupId>com.wdtinc</groupId>
+    <groupId>com.supermap</groupId>
     <artifactId>mapbox-vector-tile</artifactId>
     <version>3.1.1</version>
-</dependency>
-```
-
-JTS 14 with no android support:
-
-```xml
-<dependency>
-    <groupId>com.wdtinc</groupId>
-    <artifactId>mapbox-vector-tile</artifactId>
-    <version>2.0.0</version>
 </dependency>
 ```
 
@@ -60,14 +50,9 @@ JTS 14 with no android support:
 Latest version using JTS 15 with android API level 15 support:
 
 ```
-compile 'com.wdtinc:mapbox-vector-tile:3.1.1'
+compile 'com.supermap:mapbox-vector-tile:3.1.1'
 ```
 
-JTS 14 with no android support:
-
-```
-compile 'com.wdtinc:mapbox-vector-tile:2.0.0'
-```
 
 ### Reading MVTs
 
