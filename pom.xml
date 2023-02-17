@@ -6,7 +6,7 @@
 
     <groupId>com.wdtinc</groupId>
     <artifactId>mapbox-vector-tile</artifactId>
-    <version>3.1.0</version>
+    <version>3.1.0-pb2-v5</version>
     <packaging>jar</packaging>
 
     <name>Mapbox Vector Tiles - Java</name>
@@ -112,20 +112,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
                 <version>1.6.7</version>
@@ -152,14 +138,14 @@
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>3.5.1</version>
+            <version>2.6.1</version>
         </dependency>
 
         <!-- Geometry model -->
         <dependency>
             <groupId>org.locationtech.jts</groupId>
             <artifactId>jts-core</artifactId>
-            <version>1.15.1</version>
+            <version>1.18.0</version>
         </dependency>
 
         <!-- Testing -->

@@ -139,6 +139,56 @@ public final class JtsAdapter {
 
         return new TileGeomResult(intersectedGeoms, transformedGeoms);
     }
+    
+    public static TileGeomResult createTileGeomClipped(List<org.locationtech.jts.geom.Geometry> list, Envelope tileEnvelope, GeometryFactory geomFactory,
+            MvtLayerParams mvtLayerParams, IGeometryFilter filter) {
+
+//        final org.locationtech.jts.geom.Geometry tileClipGeom = geomFactory.toGeometry(clipEnvelope);
+
+        final AffineTransformation t = new AffineTransformation();
+        final double xDiff = tileEnvelope.getWidth();
+        final double yDiff = tileEnvelope.getHeight();
+
+        final double xOffset = -tileEnvelope.getMinX();
+        final double yOffset = -tileEnvelope.getMinY();
+
+        // Transform Setup: Shift to 0 as minimum value
+        t.translate(xOffset, yOffset);
+
+        // Transform Setup: Scale X and Y to tile extent values, flip Y values
+        t.scale(1d / (xDiff / (double) mvtLayerParams.extent), -1d / (yDiff / (double) mvtLayerParams.extent));
+
+        // Transform Setup: Bump Y values to positive quadrant
+        t.translate(0d, (double) mvtLayerParams.extent);
+
+        // The area contained in BOTH the 'original geometry', g, AND the 'clip envelope geometry' is the 'tile geometry'
+        final List<org.locationtech.jts.geom.Geometry> intersectedGeoms = list;
+        final List<org.locationtech.jts.geom.Geometry> transformedGeoms = new ArrayList<>(intersectedGeoms.size());
+
+        // Transform intersected geometry
+        org.locationtech.jts.geom.Geometry nextTransformGeom;
+        Object nextUserData;
+        for (org.locationtech.jts.geom.Geometry nextInterGeom : intersectedGeoms) {
+            nextUserData = nextInterGeom.getUserData();
+
+            nextTransformGeom = t.transform(nextInterGeom);
+
+            // Floating --> Integer, still contained within doubles
+            nextTransformGeom.apply(RoundingFilter.INSTANCE);
+
+            // TODO: Refactor line simplification
+            nextTransformGeom = TopologyPreservingSimplifier.simplify(nextTransformGeom, .1d); // Can't use 0d, specify value < .5d
+
+            nextTransformGeom.setUserData(nextUserData);
+
+            // Apply filter on transformed geometry
+            if (filter.accept(nextTransformGeom)) {
+                transformedGeoms.add(nextTransformGeom);
+            }
+        }
+
+        return new TileGeomResult(intersectedGeoms, transformedGeoms);
+    }
 
     /**
      * JTS 1.14 does not support intersection on a {@link GeometryCollection}. This function works around this
@@ -354,7 +404,7 @@ public final class JtsAdapter {
                 boolean valid = true;
 
                 // Add exterior ring
-                final LineString exteriorRing = nextPoly.getExteriorRing();
+                final LinearRing exteriorRing = nextPoly.getExteriorRing();
 
                 // Area must be non-zero
                 final double exteriorArea = CGAlgorithms.signedArea(exteriorRing.getCoordinates());
@@ -363,7 +413,7 @@ public final class JtsAdapter {
                 }
 
                 // Check CCW Winding (must be positive area)
-                if(exteriorArea < 0d) {
+                if(exteriorArea > 0d) {
                     CoordinateArrays.reverse(exteriorRing.getCoordinates());
                 }
 
@@ -382,7 +432,7 @@ public final class JtsAdapter {
                     }
 
                     // Check CW Winding (must be negative area)
-                    if(interiorArea > 0d) {
+                    if(interiorArea < 0d) {
                         CoordinateArrays.reverse(nextInteriorRing.getCoordinates());
                     }
 
@@ -497,17 +547,31 @@ public final class JtsAdapter {
 
         final Coordinate[] geomCoords = geom.getCoordinates();
 
-        // Check geometry for repeated end points
-        final int repeatEndCoordCount = countCoordRepeatReverse(geomCoords);
-        final int minExpGeomCoords = geomCoords.length - repeatEndCoordCount;
+        // Calculate the geometry coordinate count for processing that supports ignoring repeated final points
+        final int geomProcCoordCount;
+        if(closeEnabled) {
+
+            // Check geometry for repeated end points when closing (Polygon rings)
+            final int repeatEndCoordCount = countCoordRepeatReverse(geomCoords);
+            geomProcCoordCount = geomCoords.length - repeatEndCoordCount;
+
+        } else {
+
+            // No closing (Line strings)
+            geomProcCoordCount = geomCoords.length;
+        }
+
 
         // Guard/Optimization: Not enough geometry coordinates for a line
-        if(minExpGeomCoords < 2) {
+        if(geomProcCoordCount < 2) {
             return Collections.emptyList();
         }
 
+        // Save cursor position if failure creating geometry occurs
+        final Vec2d origCursorPos = new Vec2d(cursor);
+
         /** Tile commands and parameters */
-        final List<Integer> geomCmds = new ArrayList<>(geomCmdBuffLenLines(minExpGeomCoords, closeEnabled));
+        final List<Integer> geomCmds = new ArrayList<>(geomCmdBuffLenLines(geomProcCoordCount, closeEnabled));
 
         /** Holds next MVT coordinate */
         final Vec2d mvtPos = new Vec2d();
@@ -532,7 +596,7 @@ public final class JtsAdapter {
         /** Length of 'LineTo' draw command */
         int lineToLength = 0;
 
-        for(int i = 1; i < minExpGeomCoords; ++i) {
+        for(int i = 1; i < geomProcCoordCount; ++i) {
             nextCoord = geomCoords[i];
             mvtPos.set(nextCoord.x, nextCoord.y);
 
@@ -555,6 +619,9 @@ public final class JtsAdapter {
             return geomCmds;
 
         } else {
+
+            // Revert cursor position
+            cursor.set(origCursorPos);
 
             // Invalid geometry, need at least 1 'LineTo' value to make a Multiline or Polygon
             return Collections.emptyList();

@@ -120,14 +120,14 @@ public final class JtsGeomStats {
             final Polygon nextPoly = (Polygon) geom.getGeometryN(i);
 
             // Stats: exterior ring
-            final LineString exteriorRing = nextPoly.getExteriorRing();
+            final LinearRing exteriorRing = nextPoly.getExteriorRing();
             featureStats.totalPts += exteriorRing.getNumPoints();
             featureStats.repeatedPts += checkRepeatedPoints2d(exteriorRing);
 
             // Stats: interior rings
             for(int ringIndex = 0; ringIndex < nextPoly.getNumInteriorRing(); ++ringIndex) {
 
-                final LineString nextInteriorRing = nextPoly.getInteriorRingN(ringIndex);
+                final LinearRing nextInteriorRing = nextPoly.getInteriorRingN(ringIndex);
                 featureStats.totalPts += nextInteriorRing.getNumPoints();
                 featureStats.repeatedPts += checkRepeatedPoints2d(nextInteriorRing);
             }
